@@ -427,6 +427,26 @@
     margin-bottom: .7rem;
   }
   .advice-block:last-child { margin-bottom: 0; }
+  .advice-block.tier-low {
+    background: var(--orange-light);
+    border-left-color: var(--orange);
+  }
+  .advice-block.tier-low .advice-cat { border-bottom-color: rgba(231,111,81,.4); }
+  .advice-block.tier-low .advice-cat-pct,
+  .advice-block.tier-low .advice-tier-badge { color: var(--orange-dark); }
+  .advice-block.tier-low .advice-tips li::before { color: var(--orange-dark); }
+  .advice-block.tier-mid {
+    background: var(--gold-light);
+    border-left-color: var(--gold);
+  }
+  .advice-block.tier-high {
+    background: var(--blue-light);
+    border-left-color: var(--blue);
+  }
+  .advice-block.tier-high .advice-cat { border-bottom-color: rgba(74,156,199,.35); }
+  .advice-block.tier-high .advice-cat-pct,
+  .advice-block.tier-high .advice-tier-badge { color: var(--blue-dark); }
+  .advice-block.tier-high .advice-tips li::before { color: var(--blue-dark); }
   .advice-cat {
     display: flex;
     align-items: center;
@@ -434,6 +454,7 @@
     margin-bottom: .6rem;
     padding-bottom: .55rem;
     border-bottom: 1px dashed rgba(232,160,32,.4);
+    flex-wrap: wrap;
   }
   .advice-cat-dot {
     width: 8px;
@@ -446,6 +467,16 @@
     font-weight: 700;
     color: var(--navy);
     flex: 1;
+    min-width: 0;
+  }
+  .advice-tier-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    background: rgba(255,255,255,.7);
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: -0.2px;
   }
   .advice-cat-pct {
     font-size: 11.5px;
@@ -653,14 +684,12 @@
       <div class="result-heading">나의 서비스 역량 현황</div>
       <div id="score-rows"></div>
       <div class="divider"></div>
-      <div class="focus-section-label">집중할 영역</div>
-      <div class="tag-wrap" id="focus-tags"></div>
       <div class="focus-section-label">강점 영역</div>
       <div class="tag-wrap" id="good-tags"></div>
 
       <div class="divider"></div>
 
-      <div class="advice-heading">오늘 교육에서 챙길 맞춤 조언</div>
+      <div class="advice-heading">아쉬운 영역 · 영역별 조언</div>
       <div class="advice-list" id="advice-list"></div>
 
       <div class="result-msg" id="result-msg"></div>
@@ -864,7 +893,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
 
   const sr = document.getElementById('score-rows');
   sr.innerHTML = '';
-  const low = [], high = [];
+  const high = [];
   const catResults = [];
   let totalPct = 0;
 
@@ -874,7 +903,6 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     const pct   = Math.round(total / (keys.length * MAX_SCORE) * 100);
     catResults.push({ ...cat, pct });
     totalPct += pct;
-    if (pct < 60) low.push(cat.label);
     if (pct >= 80) high.push(cat.label);
     const row = document.createElement('div');
     row.className = 'score-row';
@@ -894,11 +922,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     });
   }, 80);
 
-  const ft = document.getElementById('focus-tags');
   const gt = document.getElementById('good-tags');
-  ft.innerHTML = low.length
-    ? low.map(l => `<span class="tag tag-focus">${l}</span>`).join('')
-    : '<span class="tag tag-good">집중 영역 없음 — 전반적으로 준비됨!</span>';
   gt.innerHTML = high.length
     ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
     : '<span class="tag" style="background:var(--bg);color:var(--text-muted);border:1px solid var(--border)">교육 후 재확인해 보세요</span>';
@@ -907,10 +931,10 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   const mi  = avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3;
   document.getElementById('result-msg').textContent = msgs[mi];
 
-  // 카테고리별 맞춤 조언
+  // 아쉬운 영역 — 영역별 조언 (강점이 아닌 모든 영역)
   const adviceWrap = document.getElementById('advice-list');
   adviceWrap.innerHTML = '';
-  const focusCats = catResults.filter(c => c.pct < 60)
+  const focusCats = catResults.filter(c => c.pct < 80)
                               .sort((a, b) => a.pct - b.pct);
 
   if (focusCats.length === 0) {
@@ -923,12 +947,16 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   } else {
     focusCats.forEach(c => {
       const tips = catAdvice[c.id] || [];
+      const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
+                 : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
+                              : { cls: 'tier-high', label: '조금 아쉬워요' };
       const block = document.createElement('div');
-      block.className = 'advice-block';
+      block.className = 'advice-block ' + tier.cls;
       block.innerHTML = `
         <div class="advice-cat">
           <span class="advice-cat-dot" style="background:${c.color}"></span>
           <span class="advice-cat-name">${c.label}</span>
+          <span class="advice-tier-badge">${tier.label}</span>
           <span class="advice-cat-pct">${c.pct}%</span>
         </div>
         <ul class="advice-tips">
