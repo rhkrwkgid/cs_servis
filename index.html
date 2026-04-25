@@ -447,6 +447,14 @@
   .advice-block.tier-high .advice-cat-pct,
   .advice-block.tier-high .advice-tier-badge { color: var(--blue-dark); }
   .advice-block.tier-high .advice-tips li::before { color: var(--blue-dark); }
+  .advice-block.tier-top {
+    background: var(--teal-light);
+    border-left-color: var(--teal);
+  }
+  .advice-block.tier-top .advice-cat { border-bottom-color: rgba(42,157,143,.35); }
+  .advice-block.tier-top .advice-cat-pct,
+  .advice-block.tier-top .advice-tier-badge { color: var(--teal-dark); }
+  .advice-block.tier-top .advice-tips li::before { color: var(--teal-dark); }
   .advice-cat {
     display: flex;
     align-items: center;
@@ -689,7 +697,7 @@
 
       <div class="divider"></div>
 
-      <div class="advice-heading">아쉬운 영역 · 영역별 조언</div>
+      <div class="advice-heading">내 보완점 · 가장 먼저 챙길 3개 영역</div>
       <div class="advice-list" id="advice-list"></div>
 
       <div class="result-msg" id="result-msg"></div>
@@ -782,10 +790,10 @@ const opts = [
 const MAX_SCORE = 5;
 
 const msgs = [
-  '전 영역이 탄탄하게 준비되어 있어요. 오늘 교육은 "디테일을 다듬는 시간"이 됩니다. 평소 응대를 영상으로 한 번 찍어 보면, 한 단계 더 올라설 포인트가 보일 거예요.',
-  '전반적으로 준비가 잘 되어 있네요. 집중 영역 1~2개만 의식적으로 연습해도 매장 전체 분위기가 달라집니다. 오늘 교육에서 그 부분을 집중적으로 가져가 봐요.',
-  '잘 하는 부분과 보완할 부분이 고루 있어요. 강점은 더 살리고, 집중 영역은 "오늘 당장 바꿀 행동 1가지"부터 시작해 보세요. 작은 변화가 단골을 만듭니다.',
-  '솔직하게 체크해 주셨다는 것 자체가 이미 절반은 성장한 거예요. 오늘 교육에서 집중 영역의 화법과 행동을 직접 연습해 보시면, 다음 주 매장에서 분명한 변화를 느끼실 거예요.',
+  '전 영역이 탄탄해요. 그래도 위 3개 영역엔 한 단계 더 다듬을 포인트가 있어요. 강점일수록 빈틈은 잘 보이지 않으니 의식적으로 챙겨봐요.',
+  '전반적으로 준비가 잘 되어 있네요. 위 3개 보완 영역만 의식적으로 연습해도 매장 전체 분위기가 달라집니다.',
+  '강점과 보완점이 고루 있어요. 위 3개 영역의 "당장 바꿀 행동 1가지"부터 시작해 보세요. 작은 변화가 단골을 만듭니다.',
+  '솔직하게 체크해 주신 것 자체가 절반은 성장한 거예요. 위 보완점 3가지를 오늘 교육에서 직접 연습해 보시면, 다음 주 매장에서 분명한 변화를 느낄 수 있어요.',
 ];
 
 const catAdvice = {
@@ -931,46 +939,39 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   const mi  = avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3;
   document.getElementById('result-msg').textContent = msgs[mi];
 
-  // 아쉬운 영역 — 영역별 조언 (강점이 아닌 모든 영역)
+  // 내 보완점 — 점수와 무관하게 가장 낮은 3개 영역을 항상 노출
   const adviceWrap = document.getElementById('advice-list');
   adviceWrap.innerHTML = '';
-  const focusCats = catResults.filter(c => c.pct < 80)
-                              .sort((a, b) => a.pct - b.pct);
+  const focusCats = [...catResults].sort((a, b) => a.pct - b.pct).slice(0, 3);
 
-  if (focusCats.length === 0) {
-    const top = [...catResults].sort((a, b) => b.pct - a.pct).slice(0, 2);
+  focusCats.forEach(c => {
+    const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
+               : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
+               : c.pct < 80 ? { cls: 'tier-high', label: '조금 아쉬워요' }
+               : c.pct < 95 ? { cls: 'tier-top',  label: '여기를 다듬어요' }
+                            : { cls: 'tier-top',  label: '거의 완벽 · 더 정교하게' };
+    const tips = c.pct >= 80
+      ? [polishAdvice[c.id], ...(catAdvice[c.id] || []).slice(0, 2)].filter(Boolean)
+      : (catAdvice[c.id] || []);
     const block = document.createElement('div');
-    block.className = 'advice-allgood';
-    block.innerHTML = '전 영역이 안정적이에요. 오늘 교육에서는 강점을 더 갈고닦는 데 집중해 봐요.<br>' +
-      top.map(c => `<strong style="color:${c.color}">· ${c.label}</strong> — ${polishAdvice[c.id] || ''}`).join('<br>');
+    block.className = 'advice-block ' + tier.cls;
+    block.innerHTML = `
+      <div class="advice-cat">
+        <span class="advice-cat-dot" style="background:${c.color}"></span>
+        <span class="advice-cat-name">${c.label}</span>
+        <span class="advice-tier-badge">${tier.label}</span>
+        <span class="advice-cat-pct">${c.pct}%</span>
+      </div>
+      <ul class="advice-tips">
+        ${tips.map(t => `<li>${t}</li>`).join('')}
+      </ul>
+    `;
     adviceWrap.appendChild(block);
-  } else {
-    focusCats.forEach(c => {
-      const tips = catAdvice[c.id] || [];
-      const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
-                 : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
-                              : { cls: 'tier-high', label: '조금 아쉬워요' };
-      const block = document.createElement('div');
-      block.className = 'advice-block ' + tier.cls;
-      block.innerHTML = `
-        <div class="advice-cat">
-          <span class="advice-cat-dot" style="background:${c.color}"></span>
-          <span class="advice-cat-name">${c.label}</span>
-          <span class="advice-tier-badge">${tier.label}</span>
-          <span class="advice-cat-pct">${c.pct}%</span>
-        </div>
-        <ul class="advice-tips">
-          ${tips.map(t => `<li>${t}</li>`).join('')}
-        </ul>
-      `;
-      adviceWrap.appendChild(block);
-    });
-  }
+  });
 
-  // 교육 후 바로 시도해 볼 3가지
+  // 교육 후 바로 시도해 볼 3가지 — 가장 낮은 3개 영역의 첫 팁
   const nextList = document.getElementById('next-step-list');
-  const nextSteps = (focusCats.length > 0 ? focusCats : [...catResults].sort((a, b) => a.pct - b.pct))
-    .slice(0, 3)
+  const nextSteps = focusCats
     .map(c => (catAdvice[c.id] && catAdvice[c.id][0]) || '')
     .filter(Boolean);
   nextList.innerHTML = nextSteps.map(s => `<li>${s}</li>`).join('');
