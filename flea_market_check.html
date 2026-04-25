@@ -7,7 +7,8 @@
 <meta name="description" content="플리마켓 참여 전 서비스 역량 셀프 체크리스트. 나의 셀러 역량을 솔직하게 점검해보세요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --coral:       #E07A5F;
@@ -45,7 +46,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -136,7 +137,7 @@
     border: 1px solid rgba(224,122,95,.4);
   }
   .hero-title {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
     font-size: 23px; font-weight: 600;
     color: #FFFFFF;
     line-height: 1.4; margin-bottom: .6rem;
@@ -204,22 +205,25 @@
   }
   .item-card.answered { border-color: var(--border-mid); box-shadow: var(--shadow-card); }
   .item-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: .75rem; }
-  .btn-row { display: flex; gap: 7px; }
+  .btn-row { display: flex; gap: 5px; }
   .btn-opt {
-    flex: 1; padding: 8px 6px; font-size: 12px;
-    font-family: 'Noto Sans KR', sans-serif;
+    flex: 1; padding: 7px 3px; font-size: 11px;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
     background: var(--bg); color: var(--text-muted);
     cursor: pointer; text-align: center;
-    transition: all .18s; min-height: 42px;
+    transition: all .18s; min-height: 44px;
     line-height: 1.35; font-weight: 400;
     white-space: pre-line;
+    min-width: 0;
   }
   .btn-opt:hover { border-color: var(--border-mid); background: var(--card-bg); }
-  .btn-opt.a1 { background: var(--amber-light); border-color: var(--amber); color: var(--amber-dark); font-weight: 500; }
-  .btn-opt.a2 { background: var(--sage-light);  border-color: var(--sage);  color: var(--sage-dark);  font-weight: 500; }
-  .btn-opt.a3 { background: var(--coral-light); border-color: var(--coral); color: var(--coral-dark); font-weight: 500; }
+  .btn-opt.a1 { background: var(--rose-light);  border-color: var(--rose);  color: var(--rose-dark);  font-weight: 500; }
+  .btn-opt.a2 { background: var(--amber-light); border-color: var(--amber); color: var(--amber-dark); font-weight: 500; }
+  .btn-opt.a3 { background: var(--sky-light);   border-color: var(--sky);   color: var(--sky-dark);   font-weight: 500; }
+  .btn-opt.a4 { background: var(--sage-light);  border-color: var(--sage);  color: var(--sage-dark);  font-weight: 500; }
+  .btn-opt.a5 { background: var(--coral-light); border-color: var(--coral); color: var(--coral-dark); font-weight: 500; }
 
   /* ── RESULT ── */
   .result-wrap { display: none; animation: fadeUp .4s ease; }
@@ -237,7 +241,7 @@
     margin-bottom: 1rem;
   }
   .result-heading {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
     font-size: 18px; font-weight: 600;
     color: var(--navy); margin-bottom: 1.25rem;
   }
@@ -271,6 +275,119 @@
     line-height: 1.7; font-style: italic;
   }
 
+  /* ── ADVICE SECTION ── */
+  .advice-heading {
+    font-size: 13px; font-weight: 700;
+    color: var(--navy); margin-bottom: .85rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .advice-heading::before {
+    content: ''; width: 4px; height: 16px;
+    background: var(--coral); border-radius: 2px;
+  }
+  .advice-list { margin-bottom: 1.1rem; }
+  .advice-block {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1rem .9rem 1.05rem;
+    margin-bottom: .7rem;
+  }
+  .advice-block:last-child { margin-bottom: 0; }
+  .advice-block.tier-low {
+    background: var(--rose-light);
+    border-left-color: var(--rose);
+  }
+  .advice-block.tier-low .advice-cat { border-bottom-color: rgba(194,96,122,.4); }
+  .advice-block.tier-low .advice-cat-pct,
+  .advice-block.tier-low .advice-tier-badge { color: var(--rose-dark); }
+  .advice-block.tier-low .advice-tips li::before { color: var(--rose-dark); }
+  .advice-block.tier-mid {
+    background: var(--amber-light);
+    border-left-color: var(--amber);
+  }
+  .advice-block.tier-high {
+    background: var(--sky-light);
+    border-left-color: var(--sky);
+  }
+  .advice-block.tier-high .advice-cat { border-bottom-color: rgba(74,143,199,.35); }
+  .advice-block.tier-high .advice-cat-pct,
+  .advice-block.tier-high .advice-tier-badge { color: var(--sky-dark); }
+  .advice-block.tier-high .advice-tips li::before { color: var(--sky-dark); }
+  .advice-block.tier-top {
+    background: var(--sage-light);
+    border-left-color: var(--sage);
+  }
+  .advice-block.tier-top .advice-cat { border-bottom-color: rgba(61,140,110,.35); }
+  .advice-block.tier-top .advice-cat-pct,
+  .advice-block.tier-top .advice-tier-badge { color: var(--sage-dark); }
+  .advice-block.tier-top .advice-tips li::before { color: var(--sage-dark); }
+  .advice-cat {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: .6rem; padding-bottom: .55rem;
+    border-bottom: 1px dashed rgba(232,160,32,.4);
+    flex-wrap: wrap;
+  }
+  .advice-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .advice-cat-name {
+    font-size: 13.5px; font-weight: 700;
+    color: var(--navy); flex: 1; min-width: 0;
+  }
+  .advice-tier-badge {
+    font-size: 10.5px; font-weight: 700;
+    color: var(--amber-dark);
+    background: rgba(255,255,255,.7);
+    padding: 2px 8px; border-radius: 10px;
+    letter-spacing: -0.2px;
+  }
+  .advice-cat-pct {
+    font-size: 11.5px; font-weight: 700;
+    color: var(--amber-dark);
+    background: var(--card-bg);
+    padding: 2px 9px; border-radius: 12px;
+  }
+  .advice-tips { list-style: none; padding: 0; margin: 0; }
+  .advice-tips li {
+    font-size: 13px; color: var(--navy);
+    line-height: 1.65; padding-left: 20px;
+    position: relative; margin-bottom: .4rem;
+  }
+  .advice-tips li:last-child { margin-bottom: 0; }
+  .advice-tips li::before {
+    content: '✓'; position: absolute;
+    left: 2px; top: 0;
+    color: var(--amber-dark);
+    font-weight: 700; font-size: 12px;
+  }
+  .next-step {
+    margin-top: 1.1rem; padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+  }
+  .next-step-label {
+    font-size: 12px; color: var(--text-muted);
+    margin-bottom: .55rem; font-weight: 500;
+  }
+  .next-step-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: .35rem;
+    counter-reset: step;
+  }
+  .next-step-list li {
+    font-size: 12.5px; color: var(--text);
+    line-height: 1.6; padding-left: 22px;
+    position: relative;
+  }
+  .next-step-list li::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute; left: 0; top: 1px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--coral); color: #fff;
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
   /* ── SUBMIT ── */
   .submit-wrap {
     position: fixed; bottom: 0; left: 0; right: 0;
@@ -285,7 +402,7 @@
     background: var(--coral); color: #fff;
     border: none; border-radius: var(--radius-sm);
     font-size: 15px; font-weight: 700;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     cursor: pointer;
     transition: background .2s, transform .15s;
     box-shadow: 0 4px 16px rgba(224,122,95,.38);
@@ -301,7 +418,7 @@
     width: 100%; padding: 12px;
     background: transparent; color: var(--text-muted);
     border: 1px solid var(--border); border-radius: var(--radius-sm);
-    font-size: 13px; font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px; font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     cursor: pointer; margin-top: .75rem;
   }
   .reset-btn:hover { background: var(--bg); }
@@ -311,7 +428,8 @@
   }
   @media (max-width: 480px) {
     .hero-title { font-size: 20px; }
-    .btn-opt { font-size: 11px; min-height: 40px; }
+    .btn-opt { font-size: 10.5px; min-height: 42px; padding: 6px 2px; }
+    .btn-row { gap: 4px; }
   }
 </style>
 </head>
@@ -372,11 +490,20 @@
       <div class="result-heading">나의 셀러 역량 현황</div>
       <div id="score-rows"></div>
       <div class="divider"></div>
-      <div class="section-label">집중할 영역</div>
-      <div class="tag-wrap" id="focus-tags"></div>
       <div class="section-label">강점 영역</div>
       <div class="tag-wrap" id="good-tags"></div>
+
+      <div class="divider"></div>
+
+      <div class="advice-heading">내 보완점 · 가장 먼저 챙길 3개 영역</div>
+      <div class="advice-list" id="advice-list"></div>
+
       <div class="result-msg" id="result-msg"></div>
+
+      <div class="next-step">
+        <div class="next-step-label">다음 마켓에서 바로 시도해 볼 3가지</div>
+        <ul class="next-step-list" id="next-step-list"></ul>
+      </div>
     </div>
     <button class="reset-btn" id="reset-btn">다시 체크하기</button>
   </div>
@@ -452,17 +579,62 @@ const cats = [
 ];
 
 const opts = [
-  { label: '아직\n못해요', cls: 'a1', score: 1 },
-  { label: '보통\n이에요', cls: 'a2', score: 2 },
-  { label: '잘\n해요',    cls: 'a3', score: 3 },
+  { label: '아직\n못해요',  cls: 'a1', score: 1 },
+  { label: '약간\n부족',    cls: 'a2', score: 2 },
+  { label: '보통\n이에요',  cls: 'a3', score: 3 },
+  { label: '제법\n잘해요',  cls: 'a4', score: 4 },
+  { label: '매우\n잘해요',  cls: 'a5', score: 5 },
 ];
+const MAX_SCORE = 5;
 
 const msgs = [
-  '전 영역이 탄탄해요! 오늘 교육에서 더 정교하게 다듬어 봐요.',
-  '전반적으로 잘 준비되어 있어요. 집중 영역에서 한 단계 더 올라가 봐요.',
-  '강점과 보완점이 고루 있어요. 오늘 교육이 변화의 시작점이 될 거예요.',
-  '솔직하게 체크해 주셨군요. 오늘 교육에서 가장 많이 얻어가실 수 있어요.',
+  '전 영역이 탄탄해요. 그래도 위 3개 영역엔 한 단계 더 다듬을 포인트가 있어요. 강점일수록 빈틈은 잘 보이지 않으니 의식적으로 챙겨봐요.',
+  '전반적으로 준비가 잘 되어 있네요. 위 3개 보완 영역만 의식적으로 연습해도 부스 분위기가 달라집니다.',
+  '강점과 보완점이 고루 있어요. 위 3개 영역의 "당장 바꿀 행동 1가지"부터 시작해 보세요. 작은 차이가 단골을 만듭니다.',
+  '솔직하게 체크해 주신 것 자체가 절반은 성장한 거예요. 위 보완점 3가지를 다음 마켓에서 직접 시도해 보시면, 분명한 변화를 느낄 수 있어요.',
 ];
+
+const catAdvice = {
+  setup: [
+    '진열은 "삼각형 구도" — 가운데를 가장 높게, 양옆은 낮게 배치하면 시선이 자연스럽게 머뭅니다.',
+    '가격표는 손글씨라도 또렷하게. 안 보이면 "얼마예요?" 묻기 전에 발길이 멈춥니다.',
+    '부스 정면에 SNS QR코드 + 부스명을 한눈에 — 스마트폰 든 고객이 자동으로 팔로우하게 만드세요.',
+  ],
+  welcome: [
+    '고객이 부스 앞 1m에 들어오면 3초 안에 눈 맞추기. 머무는 시간을 2배로 늘려줍니다.',
+    '"그냥 구경하세요"보다 "○○ 만든 ○○이에요" — 짧은 자기소개로 부담을 풀어주세요.',
+    '안 사고 가는 고객에게도 "다음에 또 봬요!" — 다음 마켓에 다시 옵니다.',
+  ],
+  story: [
+    '대표 상품 1개의 "30초 스토리"를 외워두세요. 재료 / 제작 시간 / 영감 — 3가지면 충분.',
+    '"이게 뭐예요?"엔 5초 안에 매력 한 문장이 나와야 합니다. 미리 적어 보세요.',
+    '"이거 들고 가시면 ○○할 때 딱이에요" — 고객의 사용 장면을 그려주세요.',
+  ],
+  price: [
+    '깎아달라 요청엔 가격 대신 가치부터 — "재료비만 ○○, 만드는 데 ○○시간 걸려요."',
+    '마진 마지노선과 할인 한도를 미리 정해두면 흔들리지 않습니다.',
+    '무리한 요청엔 정중하게 "이 가격이 최선이에요." 미안해하지 마세요.',
+  ],
+  sns: [
+    '부스에 QR코드 큰 사이즈로 — "팔로우하시면 다음 마켓 일정 알려드려요" 한 마디 추가.',
+    '명함·스티커·포장에 SNS 핸들 노출 — 집에 가서도 기억나게.',
+    '구매 고객 사진을 SNS에 올려도 되는지 양해 구해 — 콘텐츠로 활용하세요.',
+  ],
+  close: [
+    '마감 직후 5분 — 잘 팔린 / 안 팔린 / 인상 깊은 고객 3가지만 메모하세요.',
+    '"왜 이 상품이 팔렸을까?" 질문이 다음 마켓의 진열·가격·스토리를 결정합니다.',
+    '다음 마켓 일정 잡는 순간 오늘 메모 다시 꺼내기 — 같은 실수 반복을 막아줍니다.',
+  ],
+};
+
+const polishAdvice = {
+  setup:   '진열 기본기가 잘 잡혀 있어요. 시즌·테마별 디스플레이 변화를 시도해 보세요.',
+  welcome: '첫인상이 안정적이에요. 단골 얼굴을 기억하는 한마디로 차별화해 봐요.',
+  story:   '스토리텔링이 능숙해요. 영상·사진 콘텐츠로 만들어 SNS에서도 풀어보세요.',
+  price:   '가격 응대가 흔들리지 않아요. 세트·번들 구성으로 객단가를 올려 봐요.',
+  sns:     'SNS 연결 흐름이 잘 잡혀 있어요. 정기 콘텐츠 캘린더로 한 단계 더 가봐요.',
+  close:   '셀프 리뷰가 체계적이에요. 데이터를 누적해 분기별 흐름을 분석해 보세요.',
+};
 
 const TOTAL = cats.reduce((a, c) => a + c.items.length, 0);
 const answers = {};
@@ -522,15 +694,16 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   rw.classList.add('show');
   const sr = document.getElementById('score-rows');
   sr.innerHTML = '';
-  const low = [], high = [];
+  const high = [];
+  const catResults = [];
   let totalPct = 0;
 
   cats.forEach(cat => {
     const keys  = cat.items.map((_, i) => cat.id + '_' + i);
     const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
-    const pct   = Math.round(total / (keys.length * 3) * 100);
+    const pct   = Math.round(total / (keys.length * MAX_SCORE) * 100);
+    catResults.push({ ...cat, pct });
     totalPct += pct;
-    if (pct < 60) low.push(cat.label);
     if (pct >= 80) high.push(cat.label);
     const row = document.createElement('div');
     row.className = 'score-row';
@@ -547,17 +720,50 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     sr.querySelectorAll('.score-bar').forEach(b => { b.style.width = b.dataset.pct + '%'; });
   }, 80);
 
-  const ft = document.getElementById('focus-tags');
   const gt = document.getElementById('good-tags');
-  ft.innerHTML = low.length
-    ? low.map(l => `<span class="tag tag-focus">${l}</span>`).join('')
-    : '<span class="tag tag-good">집중 영역 없음 — 전반적으로 준비됨!</span>';
   gt.innerHTML = high.length
     ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
-    : '<span class="tag tag-none">교육 후 재확인해 보세요</span>';
+    : '<span class="tag tag-none">다음 마켓 후 재확인해 보세요</span>';
 
   const avg = Math.round(totalPct / cats.length);
   document.getElementById('result-msg').textContent = msgs[avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3];
+
+  // 내 보완점 — 점수와 무관하게 가장 낮은 3개 영역을 항상 노출
+  const adviceWrap = document.getElementById('advice-list');
+  adviceWrap.innerHTML = '';
+  const focusCats = [...catResults].sort((a, b) => a.pct - b.pct).slice(0, 3);
+
+  focusCats.forEach(c => {
+    const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
+               : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
+               : c.pct < 80 ? { cls: 'tier-high', label: '조금 아쉬워요' }
+               : c.pct < 95 ? { cls: 'tier-top',  label: '여기를 다듬어요' }
+                            : { cls: 'tier-top',  label: '거의 완벽 · 더 정교하게' };
+    const tips = c.pct >= 80
+      ? [polishAdvice[c.id], ...(catAdvice[c.id] || []).slice(0, 2)].filter(Boolean)
+      : (catAdvice[c.id] || []);
+    const block = document.createElement('div');
+    block.className = 'advice-block ' + tier.cls;
+    block.innerHTML = `
+      <div class="advice-cat">
+        <span class="advice-cat-dot" style="background:${c.color}"></span>
+        <span class="advice-cat-name">${c.label}</span>
+        <span class="advice-tier-badge">${tier.label}</span>
+        <span class="advice-cat-pct">${c.pct}%</span>
+      </div>
+      <ul class="advice-tips">
+        ${tips.map(t => `<li>${t}</li>`).join('')}
+      </ul>`;
+    adviceWrap.appendChild(block);
+  });
+
+  // 다음 마켓에서 바로 시도해 볼 3가지
+  const nextList = document.getElementById('next-step-list');
+  const nextSteps = focusCats
+    .map(c => (catAdvice[c.id] && catAdvice[c.id][0]) || '')
+    .filter(Boolean);
+  nextList.innerHTML = nextSteps.map(s => `<li>${s}</li>`).join('');
+
   document.getElementById('submit-wrap').style.display = 'none';
   rw.scrollIntoView({ behavior: 'smooth' });
 });
