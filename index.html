@@ -7,7 +7,8 @@
 <meta name="description" content="도자기 매장 서비스 교육 전 셀프 체크리스트. 나의 서비스 역량을 솔직하게 점검해보세요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --teal: #2A9D8F;
@@ -47,7 +48,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -149,7 +150,7 @@
     border: 1px solid rgba(42,157,143,.4);
   }
   .hero-title {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
     font-size: 24px;
     font-weight: 600;
     color: #FFFFFF;
@@ -243,13 +244,13 @@
   }
   .btn-row {
     display: flex;
-    gap: 7px;
+    gap: 5px;
   }
   .btn-opt {
     flex: 1;
-    padding: 8px 6px;
-    font-size: 12px;
-    font-family: 'Noto Sans KR', sans-serif;
+    padding: 7px 3px;
+    font-size: 11px;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
     background: var(--bg);
@@ -257,27 +258,40 @@
     cursor: pointer;
     text-align: center;
     transition: all .18s;
-    min-height: 42px;
+    min-height: 44px;
     line-height: 1.35;
     font-weight: 400;
+    min-width: 0;
   }
   .btn-opt:hover {
     border-color: var(--border-mid);
     background: var(--white);
   }
   .btn-opt.active-1 {
+    background: var(--orange-light);
+    border-color: var(--orange);
+    color: var(--orange-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-2 {
     background: var(--gold-light);
     border-color: var(--gold);
     color: var(--gold-dark);
     font-weight: 500;
   }
-  .btn-opt.active-2 {
+  .btn-opt.active-3 {
+    background: var(--blue-light);
+    border-color: var(--blue);
+    color: var(--blue-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-4 {
     background: var(--teal-light);
     border-color: var(--teal);
     color: var(--teal-dark);
     font-weight: 500;
   }
-  .btn-opt.active-3 {
+  .btn-opt.active-5 {
     background: var(--green-light);
     border-color: var(--green);
     color: var(--green-dark);
@@ -303,7 +317,7 @@
     margin-bottom: 1rem;
   }
   .result-heading {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
     font-size: 18px;
     font-weight: 600;
     color: var(--navy);
@@ -385,6 +399,178 @@
     font-style: italic;
   }
 
+  /* ── ADVICE SECTION ── */
+  .advice-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .advice-heading::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+  .advice-list {
+    margin-bottom: 1.1rem;
+  }
+  .advice-block {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1rem .9rem 1.05rem;
+    margin-bottom: .7rem;
+  }
+  .advice-block:last-child { margin-bottom: 0; }
+  .advice-block.tier-low {
+    background: var(--orange-light);
+    border-left-color: var(--orange);
+  }
+  .advice-block.tier-low .advice-cat { border-bottom-color: rgba(231,111,81,.4); }
+  .advice-block.tier-low .advice-cat-pct,
+  .advice-block.tier-low .advice-tier-badge { color: var(--orange-dark); }
+  .advice-block.tier-low .advice-tips li::before { color: var(--orange-dark); }
+  .advice-block.tier-mid {
+    background: var(--gold-light);
+    border-left-color: var(--gold);
+  }
+  .advice-block.tier-high {
+    background: var(--blue-light);
+    border-left-color: var(--blue);
+  }
+  .advice-block.tier-high .advice-cat { border-bottom-color: rgba(74,156,199,.35); }
+  .advice-block.tier-high .advice-cat-pct,
+  .advice-block.tier-high .advice-tier-badge { color: var(--blue-dark); }
+  .advice-block.tier-high .advice-tips li::before { color: var(--blue-dark); }
+  .advice-block.tier-top {
+    background: var(--teal-light);
+    border-left-color: var(--teal);
+  }
+  .advice-block.tier-top .advice-cat { border-bottom-color: rgba(42,157,143,.35); }
+  .advice-block.tier-top .advice-cat-pct,
+  .advice-block.tier-top .advice-tier-badge { color: var(--teal-dark); }
+  .advice-block.tier-top .advice-tips li::before { color: var(--teal-dark); }
+  .advice-cat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: .6rem;
+    padding-bottom: .55rem;
+    border-bottom: 1px dashed rgba(232,160,32,.4);
+    flex-wrap: wrap;
+  }
+  .advice-cat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .advice-cat-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--navy);
+    flex: 1;
+    min-width: 0;
+  }
+  .advice-tier-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    background: rgba(255,255,255,.7);
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: -0.2px;
+  }
+  .advice-cat-pct {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    background: var(--white);
+    padding: 2px 9px;
+    border-radius: 12px;
+  }
+  .advice-tips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .advice-tips li {
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.65;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: .4rem;
+  }
+  .advice-tips li:last-child { margin-bottom: 0; }
+  .advice-tips li::before {
+    content: '✓';
+    position: absolute;
+    left: 2px;
+    top: 0;
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .advice-allgood {
+    background: var(--teal-light);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1.1rem;
+    font-size: 13px;
+    color: var(--teal-dark);
+    line-height: 1.7;
+  }
+  .next-step {
+    margin-top: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+  }
+  .next-step-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: .55rem;
+    font-weight: 500;
+  }
+  .next-step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+  }
+  .next-step-list li {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.6;
+    padding-left: 22px;
+    position: relative;
+  }
+  .next-step-list li::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .next-step-list { counter-reset: step; }
+
   /* ── SUBMIT BUTTON ── */
   .submit-wrap {
     position: fixed;
@@ -411,7 +597,7 @@
     border-radius: var(--radius-sm);
     font-size: 15px;
     font-weight: 700;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     cursor: pointer;
     transition: background .2s, transform .15s;
     box-shadow: 0 4px 16px rgba(42,157,143,.35);
@@ -439,7 +625,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     font-size: 13px;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     cursor: pointer;
     margin-top: .75rem;
   }
@@ -455,7 +641,8 @@
 
   @media (max-width: 480px) {
     .hero-title { font-size: 21px; }
-    .btn-opt { font-size: 11px; min-height: 40px; }
+    .btn-opt { font-size: 10.5px; min-height: 42px; padding: 6px 2px; }
+    .btn-row { gap: 4px; }
     .item-text { font-size: 13.5px; }
   }
 </style>
@@ -505,11 +692,20 @@
       <div class="result-heading">나의 서비스 역량 현황</div>
       <div id="score-rows"></div>
       <div class="divider"></div>
-      <div class="focus-section-label">집중할 영역</div>
-      <div class="tag-wrap" id="focus-tags"></div>
       <div class="focus-section-label">강점 영역</div>
       <div class="tag-wrap" id="good-tags"></div>
+
+      <div class="divider"></div>
+
+      <div class="advice-heading">내 보완점 · 가장 먼저 챙길 3개 영역</div>
+      <div class="advice-list" id="advice-list"></div>
+
       <div class="result-msg" id="result-msg"></div>
+
+      <div class="next-step">
+        <div class="next-step-label">교육 후 바로 시도해 볼 3가지</div>
+        <ul class="next-step-list" id="next-step-list"></ul>
+      </div>
     </div>
     <button class="reset-btn" id="reset-btn">다시 체크하기</button>
   </div>
@@ -585,17 +781,62 @@ const cats = [
 ];
 
 const opts = [
-  { label: '아직\n못해요', cls: 'active-1', score: 1 },
-  { label: '보통\n이에요', cls: 'active-2', score: 2 },
-  { label: '잘\n해요',    cls: 'active-3', score: 3 },
+  { label: '아직\n못해요',  cls: 'active-1', score: 1 },
+  { label: '약간\n부족',    cls: 'active-2', score: 2 },
+  { label: '보통\n이에요',  cls: 'active-3', score: 3 },
+  { label: '제법\n잘해요',  cls: 'active-4', score: 4 },
+  { label: '매우\n잘해요',  cls: 'active-5', score: 5 },
 ];
+const MAX_SCORE = 5;
 
 const msgs = [
-  '전 영역이 탄탄하게 준비되어 있어요! 오늘 교육으로 더 정교하게 다듬어 봐요.',
-  '전반적으로 준비가 잘 되어 있네요. 집중 영역에서 한 단계 더 올라가 봐요.',
-  '잘 하는 부분과 보완할 부분이 고루 있어요. 오늘 교육이 딱 맞는 시점이에요.',
-  '솔직하게 체크해 주셨군요. 오늘 교육에서 실질적인 변화를 만들 수 있어요.',
+  '전 영역이 탄탄해요. 그래도 위 3개 영역엔 한 단계 더 다듬을 포인트가 있어요. 강점일수록 빈틈은 잘 보이지 않으니 의식적으로 챙겨봐요.',
+  '전반적으로 준비가 잘 되어 있네요. 위 3개 보완 영역만 의식적으로 연습해도 매장 전체 분위기가 달라집니다.',
+  '강점과 보완점이 고루 있어요. 위 3개 영역의 "당장 바꿀 행동 1가지"부터 시작해 보세요. 작은 변화가 단골을 만듭니다.',
+  '솔직하게 체크해 주신 것 자체가 절반은 성장한 거예요. 위 보완점 3가지를 오늘 교육에서 직접 연습해 보시면, 다음 주 매장에서 분명한 변화를 느낄 수 있어요.',
 ];
+
+const catAdvice = {
+  welcome: [
+    '하던 일을 멈추고 3초 안에 눈을 맞추세요. 환대의 절반은 이 행동에서 결정됩니다.',
+    '둘러보는 고객과는 2~3m 거리, "편하게 둘러보세요" 한마디로 부담을 덜어주세요.',
+    '구매하지 않고 나가는 고객일수록 따뜻한 배웅이 다음 방문을 만듭니다.',
+  ],
+  product: [
+    '대표 제품 3개의 "30초 스토리"를 글로 적고, 매일 한 번 소리 내어 연습해 보세요.',
+    '"산지 → 작가 → 제작 방식 → 일상 활용"의 4단계 화법으로 정리하면 자신감이 붙어요.',
+    '"이 그릇엔 어떤 음식이 잘 어울려요?"처럼 고객의 일상 장면에 연결하는 한 문장을 준비하세요.',
+  ],
+  price: [
+    '"왜 비싸요?"엔 변명 대신 "어떻게 만들어지는지"부터 차분히 풀어주세요.',
+    '예산이 빠듯한 고객에겐 소품·세트 구성으로 자연스럽게 대안을 안내하세요.',
+    '할인 요청은 "매장 기준선"을 미리 정해두면 당황하지 않습니다.',
+  ],
+  phone: [
+    '전화 첫 마디 — "감사합니다, ○○도자기 □□□입니다"를 한 문장으로 외워두세요.',
+    '영업시간·위치·주차 안내 스크립트를 카운터 옆에 붙여두면 막힘이 사라집니다.',
+    '모르는 건 솔직하게. "확인 후 10분 안에 연락드릴게요"가 가장 신뢰가 갑니다.',
+  ],
+  group: [
+    '단체 문의 첫 통화에서 — 수량 / 납기일 / 포장 방식 / 예산 4가지를 반드시 확인하세요.',
+    '기업 답례품용 추천 라인업을 미리 3개 정해두면 응대 속도가 빨라집니다.',
+    '주문 이후 납품 전, 진행 상황을 한 번 먼저 알리는 것이 신뢰를 만듭니다.',
+  ],
+  repeat: [
+    '구매 직후 30초의 "관리법 한마디"가 단골을 만드는 가장 강력한 무기입니다.',
+    '"다음 주 신상 들어와요" 같은 재방문 트리거를 자연스럽게 한 문장으로 건네세요.',
+    '얼굴·취향이 기억나지 않으면, 간단한 메모 한 줄이라도 남겨보세요.',
+  ],
+};
+
+const polishAdvice = {
+  welcome: '환대의 기본기가 탄탄해요. 이제 고객별 맞춤 첫 마디로 차별화해 봐요.',
+  product: '제품 지식이 깊어요. 스토리에 감정을 더해 진짜 팬을 만들어 보세요.',
+  price: '가격 응대가 안정적이에요. "가치 화법"을 한 단계 더 정교하게 다듬어 봐요.',
+  phone: '전화 응대가 좋아요. 통화 끝 한마디로 재방문을 유도해 보세요.',
+  group: '단체주문 응대가 능숙해요. 기업 고객 사후관리까지 챙기면 매출이 올라갑니다.',
+  repeat: '단골 관리가 잘 되고 있어요. 고객 카드를 시스템화하면 더 강해집니다.',
+};
 
 const TOTAL = cats.reduce((a, c) => a + c.items.length, 0);
 const answers = {};
@@ -660,15 +901,16 @@ document.getElementById('submit-btn').addEventListener('click', () => {
 
   const sr = document.getElementById('score-rows');
   sr.innerHTML = '';
-  const low = [], high = [];
+  const high = [];
+  const catResults = [];
   let totalPct = 0;
 
   cats.forEach(cat => {
     const keys  = cat.items.map((_, i) => cat.id + '_' + i);
     const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
-    const pct   = Math.round(total / (keys.length * 3) * 100);
+    const pct   = Math.round(total / (keys.length * MAX_SCORE) * 100);
+    catResults.push({ ...cat, pct });
     totalPct += pct;
-    if (pct < 60) low.push(cat.label);
     if (pct >= 80) high.push(cat.label);
     const row = document.createElement('div');
     row.className = 'score-row';
@@ -688,11 +930,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     });
   }, 80);
 
-  const ft = document.getElementById('focus-tags');
   const gt = document.getElementById('good-tags');
-  ft.innerHTML = low.length
-    ? low.map(l => `<span class="tag tag-focus">${l}</span>`).join('')
-    : '<span class="tag tag-good">집중 영역 없음 — 전반적으로 준비됨!</span>';
   gt.innerHTML = high.length
     ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
     : '<span class="tag" style="background:var(--bg);color:var(--text-muted);border:1px solid var(--border)">교육 후 재확인해 보세요</span>';
@@ -700,6 +938,43 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   const avg = Math.round(totalPct / cats.length);
   const mi  = avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3;
   document.getElementById('result-msg').textContent = msgs[mi];
+
+  // 내 보완점 — 점수와 무관하게 가장 낮은 3개 영역을 항상 노출
+  const adviceWrap = document.getElementById('advice-list');
+  adviceWrap.innerHTML = '';
+  const focusCats = [...catResults].sort((a, b) => a.pct - b.pct).slice(0, 3);
+
+  focusCats.forEach(c => {
+    const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
+               : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
+               : c.pct < 80 ? { cls: 'tier-high', label: '조금 아쉬워요' }
+               : c.pct < 95 ? { cls: 'tier-top',  label: '여기를 다듬어요' }
+                            : { cls: 'tier-top',  label: '거의 완벽 · 더 정교하게' };
+    const tips = c.pct >= 80
+      ? [polishAdvice[c.id], ...(catAdvice[c.id] || []).slice(0, 2)].filter(Boolean)
+      : (catAdvice[c.id] || []);
+    const block = document.createElement('div');
+    block.className = 'advice-block ' + tier.cls;
+    block.innerHTML = `
+      <div class="advice-cat">
+        <span class="advice-cat-dot" style="background:${c.color}"></span>
+        <span class="advice-cat-name">${c.label}</span>
+        <span class="advice-tier-badge">${tier.label}</span>
+        <span class="advice-cat-pct">${c.pct}%</span>
+      </div>
+      <ul class="advice-tips">
+        ${tips.map(t => `<li>${t}</li>`).join('')}
+      </ul>
+    `;
+    adviceWrap.appendChild(block);
+  });
+
+  // 교육 후 바로 시도해 볼 3가지 — 가장 낮은 3개 영역의 첫 팁
+  const nextList = document.getElementById('next-step-list');
+  const nextSteps = focusCats
+    .map(c => (catAdvice[c.id] && catAdvice[c.id][0]) || '')
+    .filter(Boolean);
+  nextList.innerHTML = nextSteps.map(s => `<li>${s}</li>`).join('');
 
   document.getElementById('submit-wrap').style.display = 'none';
   rw.scrollIntoView({ behavior: 'smooth' });
