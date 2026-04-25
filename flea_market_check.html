@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플리마켓 셀러 서비스 셀프 체크 | 강사 곽자향</title>
+<meta name="description" content="플리마켓 참여 전 서비스 역량 셀프 체크리스트. 나의 셀러 역량을 솔직하게 점검해보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral:       #E07A5F;
+    --coral-light: #FDF0EC;
+    --coral-dark:  #8C3D26;
+    --amber:       #E8A020;
+    --amber-light: #FEF3DC;
+    --amber-dark:  #8B6010;
+    --sage:        #3D8C6E;
+    --sage-light:  #E4F2EC;
+    --sage-dark:   #1E5C43;
+    --sky:         #4A8FC7;
+    --sky-light:   #E6F2FB;
+    --sky-dark:    #26567A;
+    --plum:        #8B5EA7;
+    --plum-light:  #F3EDF9;
+    --plum-dark:   #4E2E72;
+    --rose:        #C2607A;
+    --rose-light:  #FCEEF2;
+    --rose-dark:   #7A2B40;
+    --navy:        #1E2D40;
+    --bg:          #F8F6F3;
+    --card-bg:     #FFFFFF;
+    --text:        #1E2D40;
+    --text-muted:  #6B7580;
+    --text-light:  #9AABB8;
+    --border:      #E5DDD6;
+    --border-mid:  #CFC4BA;
+    --radius:      14px;
+    --radius-sm:   9px;
+    --shadow:      0 2px 12px rgba(30,45,64,.06);
+    --shadow-card: 0 4px 20px rgba(30,45,64,.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark {
+    width: 32px; height: 32px;
+    background: var(--coral);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-mark svg { width: 18px; height: 18px; }
+  .logo-text  { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .logo-sub   { font-size: 11px; color: var(--text-muted); font-weight: 400; }
+  .progress-pill {
+    background: var(--coral-light);
+    color: var(--coral-dark);
+    font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 20px;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 5rem;
+  }
+
+  /* ── HERO ── */
+  .hero-card {
+    background: linear-gradient(135deg, #3D2314 0%, #6B3520 50%, #8C4A2A 100%);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -30px;
+    width: 180px; height: 180px;
+    background: rgba(224,122,95,.25);
+    border-radius: 50%;
+  }
+  .hero-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 10px;
+    width: 120px; height: 120px;
+    background: rgba(232,160,32,.18);
+    border-radius: 50%;
+  }
+  .deco-dot {
+    position: absolute;
+    top: 24px; right: 80px;
+    width: 8px; height: 8px;
+    background: rgba(255,255,255,.3);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(224,122,95,.3);
+    color: #FFCAB8;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: .75rem;
+    border: 1px solid rgba(224,122,95,.4);
+  }
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 23px; font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.4; margin-bottom: .6rem;
+    position: relative;
+  }
+  .hero-desc {
+    font-size: 13.5px;
+    color: rgba(255,255,255,.72);
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: 7px;
+    margin-top: 1.1rem; position: relative;
+  }
+  .hero-chip {
+    background: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.85);
+    font-size: 11px; padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.2);
+  }
+  .hero-progress { margin-top: 1.5rem; position: relative; }
+  .hero-progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: rgba(255,255,255,.6);
+    margin-bottom: 8px;
+  }
+  .hero-progress-label strong { color: #FFCAB8; font-weight: 500; }
+  .progress-track {
+    height: 6px;
+    background: rgba(255,255,255,.15);
+    border-radius: 3px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), #F0A090);
+    border-radius: 3px;
+    transition: width .4s ease;
+    width: 0%;
+  }
+
+  /* ── CATEGORY ── */
+  .cat-section { margin-bottom: 1.75rem; }
+  .cat-label {
+    display: flex; align-items: center;
+    gap: 10px; margin-bottom: .5rem;
+  }
+  .cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .cat-name { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .cat-info {
+    font-size: 12px; color: var(--text-muted);
+    padding-left: 20px; margin-bottom: .85rem;
+  }
+
+  /* ── ITEM CARD ── */
+  .item-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.1rem;
+    margin-bottom: .6rem;
+    box-shadow: var(--shadow);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .item-card.answered { border-color: var(--border-mid); box-shadow: var(--shadow-card); }
+  .item-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: .75rem; }
+  .btn-row { display: flex; gap: 7px; }
+  .btn-opt {
+    flex: 1; padding: 8px 6px; font-size: 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg); color: var(--text-muted);
+    cursor: pointer; text-align: center;
+    transition: all .18s; min-height: 42px;
+    line-height: 1.35; font-weight: 400;
+    white-space: pre-line;
+  }
+  .btn-opt:hover { border-color: var(--border-mid); background: var(--card-bg); }
+  .btn-opt.a1 { background: var(--amber-light); border-color: var(--amber); color: var(--amber-dark); font-weight: 500; }
+  .btn-opt.a2 { background: var(--sage-light);  border-color: var(--sage);  color: var(--sage-dark);  font-weight: 500; }
+  .btn-opt.a3 { background: var(--coral-light); border-color: var(--coral); color: var(--coral-dark); font-weight: 500; }
+
+  /* ── RESULT ── */
+  .result-wrap { display: none; animation: fadeUp .4s ease; }
+  .result-wrap.show { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1rem;
+  }
+  .result-heading {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--navy); margin-bottom: 1.25rem;
+  }
+  .score-row {
+    display: flex; align-items: center;
+    gap: 12px; margin-bottom: .8rem;
+  }
+  .score-name {
+    font-size: 12.5px; color: var(--text-muted);
+    width: 100px; flex-shrink: 0; line-height: 1.4;
+  }
+  .score-bar-wrap {
+    flex: 1; height: 8px;
+    background: var(--border); border-radius: 4px; overflow: hidden;
+  }
+  .score-bar { height: 100%; border-radius: 4px; transition: width .65s cubic-bezier(.22,1,.36,1); }
+  .score-pct { font-size: 13px; font-weight: 500; width: 34px; text-align: right; color: var(--text-muted); }
+  .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+  .section-label { font-size: 12px; color: var(--text-muted); margin-bottom: .6rem; font-weight: 500; }
+  .tag-wrap { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1rem; }
+  .tag { font-size: 12px; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
+  .tag-focus { background: var(--amber-light); color: var(--amber-dark); border: 1px solid var(--amber); }
+  .tag-good  { background: var(--sage-light);  color: var(--sage-dark);  border: 1px solid var(--sage); }
+  .tag-none  { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); font-weight: 400; }
+  .result-msg {
+    background: var(--coral-light);
+    border-left: 3px solid var(--coral);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1.1rem;
+    font-size: 13.5px; color: var(--coral-dark);
+    line-height: 1.7; font-style: italic;
+  }
+
+  /* ── SUBMIT ── */
+  .submit-wrap {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, var(--bg) 70%, transparent);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+  @media (min-width: 680px) {
+    .submit-wrap { left: 50%; transform: translateX(-50%); width: 680px; }
+  }
+  .submit-btn {
+    width: 100%; padding: 15px;
+    background: var(--coral); color: #fff;
+    border: none; border-radius: var(--radius-sm);
+    font-size: 15px; font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+    box-shadow: 0 4px 16px rgba(224,122,95,.38);
+  }
+  .submit-btn:hover { background: var(--coral-dark); }
+  .submit-btn:active { transform: scale(.98); }
+  .submit-btn:disabled {
+    background: var(--border-mid); color: var(--text-light);
+    cursor: not-allowed; box-shadow: none;
+  }
+  .counter-text { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: .5rem; }
+  .reset-btn {
+    width: 100%; padding: 12px;
+    background: transparent; color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    font-size: 13px; font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer; margin-top: .75rem;
+  }
+  .reset-btn:hover { background: var(--bg); }
+  .footer {
+    text-align: center; padding: 2.5rem 0 1rem;
+    font-size: 12px; color: var(--text-light); line-height: 1.8;
+  }
+  @media (max-width: 480px) {
+    .hero-title { font-size: 20px; }
+    .btn-opt { font-size: 11px; min-height: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 18 18" fill="none">
+          <rect x="2" y="9" width="14" height="7" rx="2" stroke="white" stroke-width="1.5"/>
+          <path d="M5 9V7a4 4 0 0 1 8 0v2" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="9" cy="12.5" r="1.2" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">플리마켓 셀러 서비스 체크</div>
+        <div class="logo-sub">강사 곽자향</div>
+      </div>
+    </div>
+    <div class="progress-pill" id="header-progress">0 / 18</div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="hero-card">
+    <div class="deco-dot"></div>
+    <div class="hero-badge">플리마켓 참여 전 셀프 점검</div>
+    <div class="hero-title">셀러로서 나는<br>얼마나 준비되어 있을까?</div>
+    <div class="hero-desc">
+      플리마켓은 짧은 시간 안에 신뢰를 만드는 공간이에요.<br>
+      지금 내 모습을 솔직하게 체크해 보세요.
+    </div>
+    <div class="hero-chips">
+      <span class="hero-chip">부스 셋업</span>
+      <span class="hero-chip">첫인상</span>
+      <span class="hero-chip">가격 응대</span>
+      <span class="hero-chip">스토리텔링</span>
+      <span class="hero-chip">SNS 연결</span>
+      <span class="hero-chip">마무리</span>
+    </div>
+    <div class="hero-progress">
+      <div class="hero-progress-label">
+        <span>진행률</span>
+        <strong id="prog-label">0%</strong>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="checklist-wrap"></div>
+
+  <div class="result-wrap" id="result-wrap">
+    <div class="result-card">
+      <div class="result-heading">나의 셀러 역량 현황</div>
+      <div id="score-rows"></div>
+      <div class="divider"></div>
+      <div class="section-label">집중할 영역</div>
+      <div class="tag-wrap" id="focus-tags"></div>
+      <div class="section-label">강점 영역</div>
+      <div class="tag-wrap" id="good-tags"></div>
+      <div class="result-msg" id="result-msg"></div>
+    </div>
+    <button class="reset-btn" id="reset-btn">다시 체크하기</button>
+  </div>
+
+  <div class="footer">
+    곽자향 · TenX Coaching &amp; Consulting<br>
+    플리마켓 셀러 서비스 교육
+  </div>
+
+</main>
+
+<div class="submit-wrap" id="submit-wrap">
+  <button class="submit-btn" id="submit-btn" disabled>결과 보기</button>
+  <div class="counter-text" id="counter-text">0개 응답됨 · 18개 중</div>
+</div>
+
+<script>
+const cats = [
+  {
+    id: 'setup', label: '부스 셋업 & 디스플레이', color: '#E07A5F',
+    info: '첫눈에 발걸음을 멈추게 하는 힘',
+    items: [
+      '부스 테이블 배치와 제품 진열이 고객 시선을 자연스럽게 유도한다',
+      '가격표가 명확하게 보이고, 글씨가 읽기 쉽게 표기되어 있다',
+      '부스 이름·연락처·SNS 계정이 잘 보이는 곳에 표시되어 있다',
+    ]
+  },
+  {
+    id: 'welcome', label: '첫인상 & 환대', color: '#E8A020',
+    info: '지나가는 사람을 머물게 만드는 3초',
+    items: [
+      '고객이 부스 앞에 서면 먼저 눈을 맞추고 가볍게 인사한다',
+      '"그냥 구경하세요"처럼 부담을 없애는 한마디를 자연스럽게 건넨다',
+      '구매하지 않고 떠나는 고객에게도 밝게 마무리 인사를 한다',
+    ]
+  },
+  {
+    id: 'story', label: '상품 설명 & 스토리', color: '#3D8C6E',
+    info: '내 물건이 특별한 이유를 30초 안에',
+    items: [
+      '내가 파는 상품의 제작 과정이나 특별한 이유를 설명할 수 있다',
+      '"이거 어떤 거예요?" 질문에 막히지 않고 바로 대답할 수 있다',
+      '상품을 설명할 때 고객이 사용하는 장면을 그려주며 말한다',
+    ]
+  },
+  {
+    id: 'price', label: '가격 협상 & 가치 응대', color: '#4A8FC7',
+    info: '"조금만 깎아주세요"에 흔들리지 않기',
+    items: [
+      '"왜 이렇게 비싸요?" 또는 "깎아줄 수 있어요?"에 당황하지 않고 응한다',
+      '가격 대신 품질·희소성·정성을 먼저 설명하는 습관이 있다',
+      '가격 기준을 미리 정해두고, 무리한 요청엔 정중히 거절할 수 있다',
+    ]
+  },
+  {
+    id: 'sns', label: 'SNS & 재구매 연결', color: '#8B5EA7',
+    info: '오늘 만남을 다음으로 이어가는 방법',
+    items: [
+      '구매 고객에게 SNS 팔로우·QR코드 안내를 자연스럽게 건넨다',
+      '명함·스티커·쇼핑백에 연락처와 SNS 계정이 포함되어 있다',
+      '"다음 플리마켓 일정"을 알리는 한마디를 마무리에 넣는다',
+    ]
+  },
+  {
+    id: 'close', label: '마감 & 셀프 리뷰', color: '#C2607A',
+    info: '오늘 하루를 내일의 자산으로 만들기',
+    items: [
+      '행사가 끝나면 오늘 많이 팔린 상품·잘 안 팔린 상품을 정리한다',
+      '고객 반응이 좋았던 멘트나 상황을 기록해두는 편이다',
+      '다음 참여 전 오늘 체크리스트를 다시 꺼내 볼 의향이 있다',
+    ]
+  },
+];
+
+const opts = [
+  { label: '아직\n못해요', cls: 'a1', score: 1 },
+  { label: '보통\n이에요', cls: 'a2', score: 2 },
+  { label: '잘\n해요',    cls: 'a3', score: 3 },
+];
+
+const msgs = [
+  '전 영역이 탄탄해요! 오늘 교육에서 더 정교하게 다듬어 봐요.',
+  '전반적으로 잘 준비되어 있어요. 집중 영역에서 한 단계 더 올라가 봐요.',
+  '강점과 보완점이 고루 있어요. 오늘 교육이 변화의 시작점이 될 거예요.',
+  '솔직하게 체크해 주셨군요. 오늘 교육에서 가장 많이 얻어가실 수 있어요.',
+];
+
+const TOTAL = cats.reduce((a, c) => a + c.items.length, 0);
+const answers = {};
+
+function updateProgress() {
+  const done = Object.keys(answers).length;
+  const pct  = Math.round(done / TOTAL * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = pct + '%';
+  document.getElementById('header-progress').textContent = done + ' / ' + TOTAL;
+  document.getElementById('counter-text').textContent = done + '개 응답됨 · ' + TOTAL + '개 중';
+  document.getElementById('submit-btn').disabled = done < TOTAL;
+}
+
+function build() {
+  const wrap = document.getElementById('checklist-wrap');
+  wrap.innerHTML = '';
+  cats.forEach(cat => {
+    const sec = document.createElement('div');
+    sec.className = 'cat-section';
+    sec.innerHTML = `
+      <div class="cat-label">
+        <div class="cat-dot" style="background:${cat.color}"></div>
+        <div class="cat-name">${cat.label}</div>
+      </div>
+      <div class="cat-info">${cat.info}</div>`;
+    cat.items.forEach((item, idx) => {
+      const key  = cat.id + '_' + idx;
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      card.id = 'card_' + key;
+      card.innerHTML = `<div class="item-text">${item}</div><div class="btn-row" id="row_${key}"></div>`;
+      sec.appendChild(card);
+      setTimeout(() => {
+        const row = document.getElementById('row_' + key);
+        opts.forEach(opt => {
+          const b = document.createElement('button');
+          b.className = 'btn-opt';
+          b.textContent = opt.label;
+          b.onclick = () => {
+            row.querySelectorAll('.btn-opt').forEach(x => x.className = 'btn-opt');
+            b.className = 'btn-opt ' + opt.cls;
+            answers[key] = opt.score;
+            document.getElementById('card_' + key).classList.add('answered');
+            updateProgress();
+          };
+          row.appendChild(b);
+        });
+      }, 0);
+    });
+    wrap.appendChild(sec);
+  });
+}
+
+document.getElementById('submit-btn').addEventListener('click', () => {
+  const rw = document.getElementById('result-wrap');
+  rw.classList.add('show');
+  const sr = document.getElementById('score-rows');
+  sr.innerHTML = '';
+  const low = [], high = [];
+  let totalPct = 0;
+
+  cats.forEach(cat => {
+    const keys  = cat.items.map((_, i) => cat.id + '_' + i);
+    const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
+    const pct   = Math.round(total / (keys.length * 3) * 100);
+    totalPct += pct;
+    if (pct < 60) low.push(cat.label);
+    if (pct >= 80) high.push(cat.label);
+    const row = document.createElement('div');
+    row.className = 'score-row';
+    row.innerHTML = `
+      <div class="score-name">${cat.label}</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:0%;background:${cat.color}" data-pct="${pct}"></div>
+      </div>
+      <div class="score-pct">${pct}%</div>`;
+    sr.appendChild(row);
+  });
+
+  setTimeout(() => {
+    sr.querySelectorAll('.score-bar').forEach(b => { b.style.width = b.dataset.pct + '%'; });
+  }, 80);
+
+  const ft = document.getElementById('focus-tags');
+  const gt = document.getElementById('good-tags');
+  ft.innerHTML = low.length
+    ? low.map(l => `<span class="tag tag-focus">${l}</span>`).join('')
+    : '<span class="tag tag-good">집중 영역 없음 — 전반적으로 준비됨!</span>';
+  gt.innerHTML = high.length
+    ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
+    : '<span class="tag tag-none">교육 후 재확인해 보세요</span>';
+
+  const avg = Math.round(totalPct / cats.length);
+  document.getElementById('result-msg').textContent = msgs[avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3];
+  document.getElementById('submit-wrap').style.display = 'none';
+  rw.scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.getElementById('result-wrap').classList.remove('show');
+  document.getElementById('submit-wrap').style.display = 'block';
+  build();
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+build();
+updateProgress();
+</script>
+</body>
+</html>
