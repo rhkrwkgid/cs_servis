@@ -244,12 +244,12 @@
   }
   .btn-row {
     display: flex;
-    gap: 7px;
+    gap: 5px;
   }
   .btn-opt {
     flex: 1;
-    padding: 8px 6px;
-    font-size: 12px;
+    padding: 7px 3px;
+    font-size: 11px;
     font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
@@ -258,27 +258,40 @@
     cursor: pointer;
     text-align: center;
     transition: all .18s;
-    min-height: 42px;
+    min-height: 44px;
     line-height: 1.35;
     font-weight: 400;
+    min-width: 0;
   }
   .btn-opt:hover {
     border-color: var(--border-mid);
     background: var(--white);
   }
   .btn-opt.active-1 {
+    background: var(--orange-light);
+    border-color: var(--orange);
+    color: var(--orange-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-2 {
     background: var(--gold-light);
     border-color: var(--gold);
     color: var(--gold-dark);
     font-weight: 500;
   }
-  .btn-opt.active-2 {
+  .btn-opt.active-3 {
+    background: var(--blue-light);
+    border-color: var(--blue);
+    color: var(--blue-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-4 {
     background: var(--teal-light);
     border-color: var(--teal);
     color: var(--teal-dark);
     font-weight: 500;
   }
-  .btn-opt.active-3 {
+  .btn-opt.active-5 {
     background: var(--green-light);
     border-color: var(--green);
     color: var(--green-dark);
@@ -589,7 +602,8 @@
 
   @media (max-width: 480px) {
     .hero-title { font-size: 21px; }
-    .btn-opt { font-size: 11px; min-height: 40px; }
+    .btn-opt { font-size: 10.5px; min-height: 42px; padding: 6px 2px; }
+    .btn-row { gap: 4px; }
     .item-text { font-size: 13.5px; }
   }
 </style>
@@ -730,10 +744,13 @@ const cats = [
 ];
 
 const opts = [
-  { label: '아직\n못해요', cls: 'active-1', score: 1 },
-  { label: '보통\n이에요', cls: 'active-2', score: 2 },
-  { label: '잘\n해요',    cls: 'active-3', score: 3 },
+  { label: '아직\n못해요',  cls: 'active-1', score: 1 },
+  { label: '약간\n부족',    cls: 'active-2', score: 2 },
+  { label: '보통\n이에요',  cls: 'active-3', score: 3 },
+  { label: '제법\n잘해요',  cls: 'active-4', score: 4 },
+  { label: '매우\n잘해요',  cls: 'active-5', score: 5 },
 ];
+const MAX_SCORE = 5;
 
 const msgs = [
   '전 영역이 탄탄하게 준비되어 있어요. 오늘 교육은 "디테일을 다듬는 시간"이 됩니다. 평소 응대를 영상으로 한 번 찍어 보면, 한 단계 더 올라설 포인트가 보일 거예요.',
@@ -854,7 +871,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   cats.forEach(cat => {
     const keys  = cat.items.map((_, i) => cat.id + '_' + i);
     const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
-    const pct   = Math.round(total / (keys.length * 3) * 100);
+    const pct   = Math.round(total / (keys.length * MAX_SCORE) * 100);
     catResults.push({ ...cat, pct });
     totalPct += pct;
     if (pct < 60) low.push(cat.label);
