@@ -4,781 +4,265 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>플리마켓 셀러 서비스 셀프 체크 | 강사 곽자향</title>
-<meta name="description" content="플리마켓 참여 전 서비스 역량 셀프 체크리스트. 나의 셀러 역량을 솔직하게 점검해보세요.">
+<meta name="description" content="플리마켓 참여 전 서비스 역량 셀프 체크리스트. 5점 척도로 나의 셀러 역량을 점검해보세요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --coral:       #E07A5F;
-    --coral-light: #FDF0EC;
-    --coral-dark:  #8C3D26;
-    --amber:       #E8A020;
-    --amber-light: #FEF3DC;
-    --amber-dark:  #8B6010;
-    --sage:        #3D8C6E;
-    --sage-light:  #E4F2EC;
-    --sage-dark:   #1E5C43;
-    --sky:         #4A8FC7;
-    --sky-light:   #E6F2FB;
-    --sky-dark:    #26567A;
-    --plum:        #8B5EA7;
-    --plum-light:  #F3EDF9;
-    --plum-dark:   #4E2E72;
-    --rose:        #C2607A;
-    --rose-light:  #FCEEF2;
-    --rose-dark:   #7A2B40;
-    --navy:        #1E2D40;
-    --bg:          #F8F6F3;
-    --card-bg:     #FFFFFF;
-    --text:        #1E2D40;
-    --text-muted:  #6B7580;
-    --text-light:  #9AABB8;
-    --border:      #E5DDD6;
-    --border-mid:  #CFC4BA;
-    --radius:      14px;
-    --radius-sm:   9px;
-    --shadow:      0 2px 12px rgba(30,45,64,.06);
-    --shadow-card: 0 4px 20px rgba(30,45,64,.10);
-  }
+:root{--ac:#E07A5F;--ac-l:#FEF0EB;--ac-d:#8C3D26;--navy:#1E2D40;--bg:#F7F9FC;--card:#FFF;--text:#1E2D40;--mu:#6B7B8D;--lt:#9AABB8;--bd:#E2EAF0;--bdm:#C8D8E4;--r:14px;--rs:9px}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+  .site-header{background:var(--card);border-bottom:1px solid var(--bd);padding:0 1.5rem;position:sticky;top:0;z-index:100}
+  .header-inner{max-width:680px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:32px;height:32px;background:var(--ac);border-radius:8px;display:flex;align-items:center;justify-content:center}
+  .logo-mark svg{width:18px;height:18px}
+  .logo-text{font-size:14px;font-weight:700;color:var(--navy)}
+  .logo-sub{font-size:11px;color:var(--mu)}
+  .prog-pill{font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;background:var(--ac-l);color:var(--ac-d)}
+  .main{max-width:680px;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+  .hero-card{border-radius:var(--r);padding:1.75rem;margin-bottom:2rem;position:relative;overflow:hidden}
+  .hero-badge{display:inline-block;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;margin-bottom:.65rem;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)}
+  .hero-title{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:.5rem}
+  .hero-desc{font-size:13px;color:rgba(255,255,255,.75);line-height:1.7}
+  .prog-wrap{margin-top:1.25rem}
+  .prog-meta{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.65);margin-bottom:7px}
+  .prog-meta strong{font-weight:500}
+  .prog-track{height:6px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden}
+  .prog-fill{height:100%;border-radius:3px;transition:width .4s ease;width:0%}
+  .scale-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--rs);padding:.85rem 1rem;margin-bottom:1.5rem}
+  .scale-label{font-size:11.5px;color:var(--mu);margin-bottom:.65rem;font-weight:500}
+  .scale-row{display:flex;gap:5px}
+  .sc-item{flex:1;text-align:center;padding:6px 2px;border-radius:6px;border:0.5px solid}
+  .sc-num{font-size:13px;font-weight:700;display:block;margin-bottom:2px}
+  .sc-txt{font-size:9.5px;color:var(--mu);line-height:1.35;display:block;white-space:pre-line}
+  .sc-item:nth-child(1){background:#FEF0EB;border-color:#E07A5F}.sc-item:nth-child(1) .sc-num{color:#E07A5F}
+  .sc-item:nth-child(2){background:#FEF3DC;border-color:#E8A020}.sc-item:nth-child(2) .sc-num{color:#E8A020}
+  .sc-item:nth-child(3){background:#F0F4F8;border-color:#7B9BB8}.sc-item:nth-child(3) .sc-num{color:#7B9BB8}
+  .sc-item:nth-child(4){background:#E6F5F4;border-color:#2A9D8F}.sc-item:nth-child(4) .sc-num{color:#2A9D8F}
+  .sc-item:nth-child(5){background:#E4F5EC;border-color:#4BB87A}.sc-item:nth-child(5) .sc-num{color:#4BB87A}
+  .cat-sec{margin-bottom:1.75rem}
+  .cat-hd{display:flex;align-items:center;gap:8px;margin-bottom:.3rem}
+  .cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .cat-nm{font-size:15px;font-weight:700;color:var(--navy)}
+  .cat-info{font-size:11.5px;color:var(--mu);padding-left:18px;margin-bottom:.85rem}
+  .item-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--rs);padding:.9rem 1rem;margin-bottom:.6rem;box-shadow:0 2px 8px rgba(30,45,64,.05);transition:border-color .2s}
+  .item-card.done{border-color:var(--bdm)}
+  .item-txt{font-size:13.5px;line-height:1.6;margin-bottom:.75rem}
+  .opts{display:flex;gap:5px}
+  .opt{flex:1;padding:8px 2px;font-size:10px;font-family:'Noto Sans KR',sans-serif;border-radius:var(--rs);border:0.5px solid var(--bd);background:var(--bg);color:var(--mu);cursor:pointer;text-align:center;min-height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:all .15s;white-space:pre-line}
+  .opt:hover{background:var(--card);border-color:var(--bdm)}
+  .opt-n{font-size:13px;font-weight:700;line-height:1}
+  .opt-l{font-size:9px;line-height:1.3}
+  .s1{background:#FEF0EB;border-color:#E07A5F;color:#8C3D26}.s1 .opt-n{color:#E07A5F}
+  .s2{background:#FEF3DC;border-color:#E8A020;color:#8B6010}.s2 .opt-n{color:#E8A020}
+  .s3{background:#F0F4F8;border-color:#7B9BB8;color:#3A5570}.s3 .opt-n{color:#7B9BB8}
+  .s4{background:#E6F5F4;border-color:#2A9D8F;color:#1A6B60}.s4 .opt-n{color:#2A9D8F}
+  .s5{background:#E4F5EC;border-color:#4BB87A;color:#2A7A50}.s5 .opt-n{color:#4BB87A}
+  .result-wrap{display:none;animation:fu .4s ease}
+  .result-wrap.show{display:block}
+  @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .r-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem;box-shadow:0 4px 20px rgba(30,45,64,.09)}
+  .r-heading{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:1.25rem}
+  .p-badge{display:inline-block;font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;margin-bottom:.6rem}
+  .p-name{font-size:19px;font-weight:500;color:var(--navy);margin-bottom:.45rem}
+  .p-desc{font-size:13px;color:var(--mu);line-height:1.75}
+  .dvd{height:1px;background:var(--bd);margin:1.25rem 0}
+  .sec-lbl{font-size:12px;font-weight:500;color:var(--mu);margin-bottom:.75rem}
+  .srow{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+  .sname{font-size:12px;color:var(--mu);width:92px;flex-shrink:0;line-height:1.4}
+  .strack{flex:1;height:8px;background:var(--bd);border-radius:4px;overflow:hidden}
+  .sbar{height:100%;border-radius:4px;transition:width .65s cubic-bezier(.22,1,.36,1)}
+  .stag{font-size:10.5px;font-weight:500;width:40px;text-align:right;flex-shrink:0}
+  .act-card{background:var(--card);border:1px solid var(--bd);border-radius:var(--rs);padding:.9rem 1rem;margin-bottom:.6rem}
+  .act-top{display:flex;align-items:center;gap:8px;margin-bottom:.45rem}
+  .act-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .act-cat{font-size:12px;font-weight:500;color:var(--navy)}
+  .act-lv{font-size:10.5px;font-weight:500;padding:2px 8px;border-radius:10px;margin-left:auto}
+  .act-tip{font-size:12.5px;color:var(--mu);line-height:1.7;border-left:2px solid var(--bdm);padding-left:.75rem}
+  .all-good{background:var(--bg);border-radius:var(--rs);padding:1rem;font-size:13px;color:var(--mu);line-height:1.6;text-align:center}
+  .sub-wrap{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--bg) 70%,transparent);padding:1.25rem 1.25rem 1.5rem}
+  @media(min-width:680px){.sub-wrap{left:50%;transform:translateX(-50%);width:680px}}
+  .sub-btn{width:100%;padding:14px;color:#fff;border:none;border-radius:var(--rs);font-size:15px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:background .2s}
+  .sub-btn:disabled{background:var(--bdm);color:var(--lt);cursor:not-allowed;box-shadow:none}
+  .cnt-txt{text-align:center;font-size:12px;color:var(--mu);margin-top:.5rem}
+  .reset-btn{width:100%;padding:12px;background:transparent;color:var(--mu);border:1px solid var(--bd);border-radius:var(--rs);font-size:13px;font-family:'Noto Sans KR',sans-serif;cursor:pointer;margin-top:.75rem}
+  .footer{text-align:center;padding:2.5rem 0 1rem;font-size:12px;color:var(--lt);line-height:1.8}
+  @media(max-width:480px){.hero-title{font-size:20px}.opt{min-height:44px}}
 
-  body {
-    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    line-height: 1.6;
-  }
-
-  /* ── HEADER ── */
-  .site-header {
-    background: var(--card-bg);
-    border-bottom: 1px solid var(--border);
-    padding: 0 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .header-inner {
-    max-width: 680px;
-    margin: 0 auto;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo { display: flex; align-items: center; gap: 10px; }
-  .logo-mark {
-    width: 32px; height: 32px;
-    background: var(--coral);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .logo-mark svg { width: 18px; height: 18px; }
-  .logo-text  { font-size: 14px; font-weight: 700; color: var(--navy); }
-  .logo-sub   { font-size: 11px; color: var(--text-muted); font-weight: 400; }
-  .progress-pill {
-    background: var(--coral-light);
-    color: var(--coral-dark);
-    font-size: 12px; font-weight: 500;
-    padding: 5px 12px; border-radius: 20px;
-  }
-
-  /* ── MAIN ── */
-  .main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem 5rem;
-  }
-
-  /* ── HERO ── */
-  .hero-card {
-    background: linear-gradient(135deg, #3D2314 0%, #6B3520 50%, #8C4A2A 100%);
-    border-radius: var(--radius);
-    padding: 2rem 1.75rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -50px; right: -30px;
-    width: 180px; height: 180px;
-    background: rgba(224,122,95,.25);
-    border-radius: 50%;
-  }
-  .hero-card::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: 10px;
-    width: 120px; height: 120px;
-    background: rgba(232,160,32,.18);
-    border-radius: 50%;
-  }
-  .deco-dot {
-    position: absolute;
-    top: 24px; right: 80px;
-    width: 8px; height: 8px;
-    background: rgba(255,255,255,.3);
-    border-radius: 50%;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(224,122,95,.3);
-    color: #FFCAB8;
-    font-size: 11px; font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: .75rem;
-    border: 1px solid rgba(224,122,95,.4);
-  }
-  .hero-title {
-    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
-    font-size: 23px; font-weight: 600;
-    color: #FFFFFF;
-    line-height: 1.4; margin-bottom: .6rem;
-    position: relative;
-  }
-  .hero-desc {
-    font-size: 13.5px;
-    color: rgba(255,255,255,.72);
-    line-height: 1.7;
-    position: relative;
-  }
-  .hero-chips {
-    display: flex; flex-wrap: wrap; gap: 7px;
-    margin-top: 1.1rem; position: relative;
-  }
-  .hero-chip {
-    background: rgba(255,255,255,.12);
-    color: rgba(255,255,255,.85);
-    font-size: 11px; padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,.2);
-  }
-  .hero-progress { margin-top: 1.5rem; position: relative; }
-  .hero-progress-label {
-    display: flex; justify-content: space-between;
-    font-size: 12px; color: rgba(255,255,255,.6);
-    margin-bottom: 8px;
-  }
-  .hero-progress-label strong { color: #FFCAB8; font-weight: 500; }
-  .progress-track {
-    height: 6px;
-    background: rgba(255,255,255,.15);
-    border-radius: 3px; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--coral), #F0A090);
-    border-radius: 3px;
-    transition: width .4s ease;
-    width: 0%;
-  }
-
-  /* ── CATEGORY ── */
-  .cat-section { margin-bottom: 1.75rem; }
-  .cat-label {
-    display: flex; align-items: center;
-    gap: 10px; margin-bottom: .5rem;
-  }
-  .cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .cat-name { font-size: 15px; font-weight: 700; color: var(--navy); }
-  .cat-info {
-    font-size: 12px; color: var(--text-muted);
-    padding-left: 20px; margin-bottom: .85rem;
-  }
-
-  /* ── ITEM CARD ── */
-  .item-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 1rem 1.1rem;
-    margin-bottom: .6rem;
-    box-shadow: var(--shadow);
-    transition: border-color .2s, box-shadow .2s;
-  }
-  .item-card.answered { border-color: var(--border-mid); box-shadow: var(--shadow-card); }
-  .item-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: .75rem; }
-  .btn-row { display: flex; gap: 5px; }
-  .btn-opt {
-    flex: 1; padding: 7px 3px; font-size: 11px;
-    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--bg); color: var(--text-muted);
-    cursor: pointer; text-align: center;
-    transition: all .18s; min-height: 44px;
-    line-height: 1.35; font-weight: 400;
-    white-space: pre-line;
-    min-width: 0;
-  }
-  .btn-opt:hover { border-color: var(--border-mid); background: var(--card-bg); }
-  .btn-opt.a1 { background: var(--rose-light);  border-color: var(--rose);  color: var(--rose-dark);  font-weight: 500; }
-  .btn-opt.a2 { background: var(--amber-light); border-color: var(--amber); color: var(--amber-dark); font-weight: 500; }
-  .btn-opt.a3 { background: var(--sky-light);   border-color: var(--sky);   color: var(--sky-dark);   font-weight: 500; }
-  .btn-opt.a4 { background: var(--sage-light);  border-color: var(--sage);  color: var(--sage-dark);  font-weight: 500; }
-  .btn-opt.a5 { background: var(--coral-light); border-color: var(--coral); color: var(--coral-dark); font-weight: 500; }
-
-  /* ── RESULT ── */
-  .result-wrap { display: none; animation: fadeUp .4s ease; }
-  .result-wrap.show { display: block; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .result-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem 1.5rem 1.75rem;
-    box-shadow: var(--shadow-card);
-    margin-bottom: 1rem;
-  }
-  .result-heading {
-    font-family: 'Gowun Batang', 'Noto Serif KR', serif;
-    font-size: 18px; font-weight: 600;
-    color: var(--navy); margin-bottom: 1.25rem;
-  }
-  .score-row {
-    display: flex; align-items: center;
-    gap: 12px; margin-bottom: .8rem;
-  }
-  .score-name {
-    font-size: 12.5px; color: var(--text-muted);
-    width: 100px; flex-shrink: 0; line-height: 1.4;
-  }
-  .score-bar-wrap {
-    flex: 1; height: 8px;
-    background: var(--border); border-radius: 4px; overflow: hidden;
-  }
-  .score-bar { height: 100%; border-radius: 4px; transition: width .65s cubic-bezier(.22,1,.36,1); }
-  .score-pct { font-size: 13px; font-weight: 500; width: 34px; text-align: right; color: var(--text-muted); }
-  .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
-  .section-label { font-size: 12px; color: var(--text-muted); margin-bottom: .6rem; font-weight: 500; }
-  .tag-wrap { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1rem; }
-  .tag { font-size: 12px; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
-  .tag-focus { background: var(--amber-light); color: var(--amber-dark); border: 1px solid var(--amber); }
-  .tag-good  { background: var(--sage-light);  color: var(--sage-dark);  border: 1px solid var(--sage); }
-  .tag-none  { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); font-weight: 400; }
-  .result-msg {
-    background: var(--coral-light);
-    border-left: 3px solid var(--coral);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: .9rem 1.1rem;
-    font-size: 13.5px; color: var(--coral-dark);
-    line-height: 1.7; font-style: italic;
-  }
-
-  /* ── ADVICE SECTION ── */
-  .advice-heading {
-    font-size: 13px; font-weight: 700;
-    color: var(--navy); margin-bottom: .85rem;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .advice-heading::before {
-    content: ''; width: 4px; height: 16px;
-    background: var(--coral); border-radius: 2px;
-  }
-  .advice-list { margin-bottom: 1.1rem; }
-  .advice-block {
-    background: var(--amber-light);
-    border-left: 3px solid var(--amber);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: .9rem 1rem .9rem 1.05rem;
-    margin-bottom: .7rem;
-  }
-  .advice-block:last-child { margin-bottom: 0; }
-  .advice-block.tier-low {
-    background: var(--rose-light);
-    border-left-color: var(--rose);
-  }
-  .advice-block.tier-low .advice-cat { border-bottom-color: rgba(194,96,122,.4); }
-  .advice-block.tier-low .advice-cat-pct,
-  .advice-block.tier-low .advice-tier-badge { color: var(--rose-dark); }
-  .advice-block.tier-low .advice-tips li::before { color: var(--rose-dark); }
-  .advice-block.tier-mid {
-    background: var(--amber-light);
-    border-left-color: var(--amber);
-  }
-  .advice-block.tier-high {
-    background: var(--sky-light);
-    border-left-color: var(--sky);
-  }
-  .advice-block.tier-high .advice-cat { border-bottom-color: rgba(74,143,199,.35); }
-  .advice-block.tier-high .advice-cat-pct,
-  .advice-block.tier-high .advice-tier-badge { color: var(--sky-dark); }
-  .advice-block.tier-high .advice-tips li::before { color: var(--sky-dark); }
-  .advice-block.tier-top {
-    background: var(--sage-light);
-    border-left-color: var(--sage);
-  }
-  .advice-block.tier-top .advice-cat { border-bottom-color: rgba(61,140,110,.35); }
-  .advice-block.tier-top .advice-cat-pct,
-  .advice-block.tier-top .advice-tier-badge { color: var(--sage-dark); }
-  .advice-block.tier-top .advice-tips li::before { color: var(--sage-dark); }
-  .advice-cat {
-    display: flex; align-items: center; gap: 8px;
-    margin-bottom: .6rem; padding-bottom: .55rem;
-    border-bottom: 1px dashed rgba(232,160,32,.4);
-    flex-wrap: wrap;
-  }
-  .advice-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .advice-cat-name {
-    font-size: 13.5px; font-weight: 700;
-    color: var(--navy); flex: 1; min-width: 0;
-  }
-  .advice-tier-badge {
-    font-size: 10.5px; font-weight: 700;
-    color: var(--amber-dark);
-    background: rgba(255,255,255,.7);
-    padding: 2px 8px; border-radius: 10px;
-    letter-spacing: -0.2px;
-  }
-  .advice-cat-pct {
-    font-size: 11.5px; font-weight: 700;
-    color: var(--amber-dark);
-    background: var(--card-bg);
-    padding: 2px 9px; border-radius: 12px;
-  }
-  .advice-tips { list-style: none; padding: 0; margin: 0; }
-  .advice-tips li {
-    font-size: 13px; color: var(--navy);
-    line-height: 1.65; padding-left: 20px;
-    position: relative; margin-bottom: .4rem;
-  }
-  .advice-tips li:last-child { margin-bottom: 0; }
-  .advice-tips li::before {
-    content: '✓'; position: absolute;
-    left: 2px; top: 0;
-    color: var(--amber-dark);
-    font-weight: 700; font-size: 12px;
-  }
-  .next-step {
-    margin-top: 1.1rem; padding-top: 1rem;
-    border-top: 1px dashed var(--border);
-  }
-  .next-step-label {
-    font-size: 12px; color: var(--text-muted);
-    margin-bottom: .55rem; font-weight: 500;
-  }
-  .next-step-list {
-    list-style: none; padding: 0; margin: 0;
-    display: flex; flex-direction: column; gap: .35rem;
-    counter-reset: step;
-  }
-  .next-step-list li {
-    font-size: 12.5px; color: var(--text);
-    line-height: 1.6; padding-left: 22px;
-    position: relative;
-  }
-  .next-step-list li::before {
-    content: counter(step);
-    counter-increment: step;
-    position: absolute; left: 0; top: 1px;
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    background: var(--coral); color: #fff;
-    font-size: 10px; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  /* ── SUBMIT ── */
-  .submit-wrap {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, var(--bg) 70%, transparent);
-    padding: 1.25rem 1.25rem 1.5rem;
-  }
-  @media (min-width: 680px) {
-    .submit-wrap { left: 50%; transform: translateX(-50%); width: 680px; }
-  }
-  .submit-btn {
-    width: 100%; padding: 15px;
-    background: var(--coral); color: #fff;
-    border: none; border-radius: var(--radius-sm);
-    font-size: 15px; font-weight: 700;
-    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    cursor: pointer;
-    transition: background .2s, transform .15s;
-    box-shadow: 0 4px 16px rgba(224,122,95,.38);
-  }
-  .submit-btn:hover { background: var(--coral-dark); }
-  .submit-btn:active { transform: scale(.98); }
-  .submit-btn:disabled {
-    background: var(--border-mid); color: var(--text-light);
-    cursor: not-allowed; box-shadow: none;
-  }
-  .counter-text { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: .5rem; }
-  .reset-btn {
-    width: 100%; padding: 12px;
-    background: transparent; color: var(--text-muted);
-    border: 1px solid var(--border); border-radius: var(--radius-sm);
-    font-size: 13px; font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    cursor: pointer; margin-top: .75rem;
-  }
-  .reset-btn:hover { background: var(--bg); }
-  .footer {
-    text-align: center; padding: 2.5rem 0 1rem;
-    font-size: 12px; color: var(--text-light); line-height: 1.8;
-  }
-  @media (max-width: 480px) {
-    .hero-title { font-size: 20px; }
-    .btn-opt { font-size: 10.5px; min-height: 42px; padding: 6px 2px; }
-    .btn-row { gap: 4px; }
-  }
 </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="header-inner">
     <div class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 18 18" fill="none">
-          <rect x="2" y="9" width="14" height="7" rx="2" stroke="white" stroke-width="1.5"/>
-          <path d="M5 9V7a4 4 0 0 1 8 0v2" stroke="white" stroke-width="1.5" fill="none"/>
-          <circle cx="9" cy="12.5" r="1.2" fill="white"/>
-        </svg>
-      </div>
-      <div>
-        <div class="logo-text">플리마켓 셀러 서비스 체크</div>
-        <div class="logo-sub">강사 곽자향</div>
-      </div>
+      <div class="logo-mark" style="background:#E07A5F"><svg viewBox="0 0 18 18" fill="none"><rect x="2" y="9" width="14" height="7" rx="2" stroke="white" stroke-width="1.5"/><path d="M5 9V7a4 4 0 0 1 8 0v2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="9" cy="12.5" r="1.2" fill="white"/></svg></div>
+      <div><div class="logo-text">플리마켓 셀러 서비스 체크</div><div class="logo-sub">강사 곽자향</div></div>
     </div>
-    <div class="progress-pill" id="header-progress">0 / 18</div>
+    <div class="prog-pill" id="hp">0 / 18</div>
   </div>
 </header>
-
 <main class="main">
-
-  <div class="hero-card">
-    <div class="deco-dot"></div>
-    <div class="hero-badge">플리마켓 참여 전 셀프 점검</div>
-    <div class="hero-title">셀러로서 나는<br>얼마나 준비되어 있을까?</div>
-    <div class="hero-desc">
-      플리마켓은 짧은 시간 안에 신뢰를 만드는 공간이에요.<br>
-      지금 내 모습을 솔직하게 체크해 보세요.
-    </div>
-    <div class="hero-chips">
-      <span class="hero-chip">부스 셋업</span>
-      <span class="hero-chip">첫인상</span>
-      <span class="hero-chip">가격 응대</span>
-      <span class="hero-chip">스토리텔링</span>
-      <span class="hero-chip">SNS 연결</span>
-      <span class="hero-chip">마무리</span>
-    </div>
-    <div class="hero-progress">
-      <div class="hero-progress-label">
-        <span>진행률</span>
-        <strong id="prog-label">0%</strong>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="prog-fill"></div>
-      </div>
+  <div class="hero-card" style="background:linear-gradient(135deg,#3D2314 0%,#6B3520 50%,#8C4A2A 100%)">
+    <div class="hero-badge">교육 전 셀프 점검</div>
+    <div class="hero-title">지금 내 서비스,<br>솔직하게 돌아볼게요</div>
+    <div class="hero-desc">정답은 없어요. 지금 내 행동을 있는 그대로 체크해 주세요.<br>솔직할수록 오늘 교육이 더 도움이 돼요.</div>
+    <div class="prog-wrap">
+      <div class="prog-meta"><span>진행률</span><strong id="pp">0%</strong></div>
+      <div class="prog-track"><div class="prog-fill" id="pf" style="background:linear-gradient(90deg,#E07A5F,#F0A090)"></div></div>
     </div>
   </div>
-
-  <div id="checklist-wrap"></div>
-
-  <div class="result-wrap" id="result-wrap">
-    <div class="result-card">
-      <div class="result-heading">나의 셀러 역량 현황</div>
-      <div id="score-rows"></div>
-      <div class="divider"></div>
-      <div class="section-label">강점 영역</div>
-      <div class="tag-wrap" id="good-tags"></div>
-
-      <div class="divider"></div>
-
-      <div class="advice-heading">내 보완점 · 가장 먼저 챙길 3개 영역</div>
-      <div class="advice-list" id="advice-list"></div>
-
-      <div class="result-msg" id="result-msg"></div>
-
-      <div class="next-step">
-        <div class="next-step-label">다음 마켓에서 바로 시도해 볼 3가지</div>
-        <ul class="next-step-list" id="next-step-list"></ul>
-      </div>
+  
+  <div class="scale-card">
+    <div class="scale-label">5점 척도 — 지금 내 행동 기준으로 골라주세요</div>
+    <div class="scale-row">
+      <div class="sc-item"><span class="sc-num">1</span><span class="sc-txt">안\n해봤어요</span></div>
+      <div class="sc-item"><span class="sc-num">2</span><span class="sc-txt">알지만\n거의 안</span></div>
+      <div class="sc-item"><span class="sc-num">3</span><span class="sc-txt">가끔\n해요</span></div>
+      <div class="sc-item"><span class="sc-num">4</span><span class="sc-txt">자주 하는데\n어색해요</span></div>
+      <div class="sc-item"><span class="sc-num">5</span><span class="sc-txt">항상\n자연스러워요</span></div>
     </div>
-    <button class="reset-btn" id="reset-btn">다시 체크하기</button>
   </div>
-
-  <div class="footer">
-    곽자향 · TenX Coaching &amp; Consulting<br>
-    플리마켓 셀러 서비스 교육
+  <div id="cl"></div>
+  
+  <div class="result-wrap" id="rw">
+    <div class="r-card">
+      <div class="r-heading">나의 서비스 역량 현황</div>
+      <div class="p-badge" id="pb"></div>
+      <div class="p-name" id="pn"></div>
+      <div class="p-desc" id="pd"></div>
+      <div class="dvd"></div>
+      <div class="sec-lbl">영역별 현황</div>
+      <div id="sr"></div>
+      <div class="dvd"></div>
+      <div class="sec-lbl" id="al" style="display:none">영역별 실천 제안</div>
+      <div id="ac"></div>
+    </div>
+    <button class="reset-btn" id="rb">다시 체크하기</button>
   </div>
-
+  <div class="footer">곽자향 · TenX Coaching &amp; Consulting<br>플리마켓 셀러 서비스 교육</div>
 </main>
-
-<div class="submit-wrap" id="submit-wrap">
-  <button class="submit-btn" id="submit-btn" disabled>결과 보기</button>
-  <div class="counter-text" id="counter-text">0개 응답됨 · 18개 중</div>
+<div class="sub-wrap" id="sw">
+  <button class="sub-btn" id="sb" disabled style="background:#E07A5F;box-shadow:0 4px 16px rgba(0,0,0,.2)">결과 보기</button>
+  <div class="cnt-txt" id="ct">0개 응답됨 · 18개 중</div>
 </div>
-
 <script>
-const cats = [
-  {
-    id: 'setup', label: '부스 셋업 & 디스플레이', color: '#E07A5F',
-    info: '첫눈에 발걸음을 멈추게 하는 힘',
-    items: [
-      '부스 테이블 배치와 제품 진열이 고객 시선을 자연스럽게 유도한다',
-      '가격표가 명확하게 보이고, 글씨가 읽기 쉽게 표기되어 있다',
-      '부스 이름·연락처·SNS 계정이 잘 보이는 곳에 표시되어 있다',
-    ]
-  },
-  {
-    id: 'welcome', label: '첫인상 & 환대', color: '#E8A020',
-    info: '지나가는 사람을 머물게 만드는 3초',
-    items: [
-      '고객이 부스 앞에 서면 먼저 눈을 맞추고 가볍게 인사한다',
-      '"그냥 구경하세요"처럼 부담을 없애는 한마디를 자연스럽게 건넨다',
-      '구매하지 않고 떠나는 고객에게도 밝게 마무리 인사를 한다',
-    ]
-  },
-  {
-    id: 'story', label: '상품 설명 & 스토리', color: '#3D8C6E',
-    info: '내 물건이 특별한 이유를 30초 안에',
-    items: [
-      '내가 파는 상품의 제작 과정이나 특별한 이유를 설명할 수 있다',
-      '"이거 어떤 거예요?" 질문에 막히지 않고 바로 대답할 수 있다',
-      '상품을 설명할 때 고객이 사용하는 장면을 그려주며 말한다',
-    ]
-  },
-  {
-    id: 'price', label: '가격 협상 & 가치 응대', color: '#4A8FC7',
-    info: '"조금만 깎아주세요"에 흔들리지 않기',
-    items: [
-      '"왜 이렇게 비싸요?" 또는 "깎아줄 수 있어요?"에 당황하지 않고 응한다',
-      '가격 대신 품질·희소성·정성을 먼저 설명하는 습관이 있다',
-      '가격 기준을 미리 정해두고, 무리한 요청엔 정중히 거절할 수 있다',
-    ]
-  },
-  {
-    id: 'sns', label: 'SNS & 재구매 연결', color: '#8B5EA7',
-    info: '오늘 만남을 다음으로 이어가는 방법',
-    items: [
-      '구매 고객에게 SNS 팔로우·QR코드 안내를 자연스럽게 건넨다',
-      '명함·스티커·쇼핑백에 연락처와 SNS 계정이 포함되어 있다',
-      '"다음 플리마켓 일정"을 알리는 한마디를 마무리에 넣는다',
-    ]
-  },
-  {
-    id: 'close', label: '마감 & 셀프 리뷰', color: '#C2607A',
-    info: '오늘 하루를 내일의 자산으로 만들기',
-    items: [
-      '행사가 끝나면 오늘 많이 팔린 상품·잘 안 팔린 상품을 정리한다',
-      '고객 반응이 좋았던 멘트나 상황을 기록해두는 편이다',
-      '다음 참여 전 오늘 체크리스트를 다시 꺼내 볼 의향이 있다',
-    ]
-  },
+const CATS=[
+  {id:'setup',label:'부스 셋업 & 디스플레이',color:'#E07A5F',info:'첫눈에 발걸음을 멈추게 하는 힘',
+   items:['부스 테이블 배치와 제품 진열이 고객 시선을 자연스럽게 유도한다','가격표가 명확하게 보이고 글씨가 읽기 쉽게 표기되어 있다','부스 이름·연락처·SNS 계정이 잘 보이는 곳에 표시되어 있다'],
+   tips:['일단 부스를 펼치고 1m 뒤에서 바라보세요. 눈이 어디로 가는지 확인해 보세요.','알고는 있는데 아직 실행이 안 된 거예요. 내일 당장 가격표 하나부터 바꿔 보세요.','가끔 하는 거면 됩니다. 포스트잇 하나라도 SNS 계정을 적어 붙여보세요.','전달은 되는데 아직 어색해요. SNS 계정을 QR 하나로 합쳐보면 더 자연스러워요.','']},
+  {id:'welcome',label:'첫인상 & 환대',color:'#E8A020',info:'지나가는 사람을 머물게 만드는 3초',
+   items:['고객이 부스 앞에 서면 먼저 눈을 맞추고 가볍게 인사한다','"그냥 구경하세요"처럼 부담을 없애는 한마디를 자연스럽게 건넨다','구매하지 않고 떠나는 고객에게도 밝게 마무리 인사를 한다'],
+   tips:['먼저 눈 맞추기 딱 하나만 내일부터 해보세요.','알고는 있는데 어색하죠. "편하게 보세요" 딱 다섯 글자만 연습해 보세요.','가끔은 하는데 일관성이 없어요. 구매 안 해도 인사 - 루틴으로 만들어 보세요.','행동은 하는데 자연스럽지 않아요. 반복만이 자연스러움을 만들어요.','']},
+  {id:'story',label:'상품 설명 & 스토리',color:'#3D8C6E',info:'내 물건이 특별한 이유를 30초 안에',
+   items:['내가 파는 상품의 제작 과정이나 특별한 이유를 설명할 수 있다','"이거 어떤 거예요?" 질문에 막히지 않고 바로 대답할 수 있다','상품을 설명할 때 고객이 사용하는 장면을 그려주며 말한다'],
+   tips:['왜 이걸 파는지 한 문장을 먼저 써보세요. 그게 스토리의 시작이에요.','알고는 있는데 말로 표현하기 어려운 단계예요. 소리 내어 5번 연습해 보세요.','가끔 되는 거면 됩니다. 어떤 설명에 고객이 멈추는지 패턴을 찾아보세요.','사용 장면 연결이 아직 어색해요. "이걸 집에 두면…"으로 문장 끝을 고정해 보세요.','']},
+  {id:'price',label:'가격 협상 & 가치 응대',color:'#4A8FC7',info:'"조금만 깎아주세요"에 흔들리지 않기',
+   items:['"왜 이렇게 비싸요?" 또는 "깎아줄 수 있어요?"에 당황하지 않고 응한다','가격 대신 품질·희소성·정성을 먼저 설명하는 습관이 있다','가격 기준을 미리 정해두고 무리한 요청엔 정중히 거절할 수 있다'],
+   tips:['가격 저항 멘트 딱 하나를 외워두세요. 준비된 말은 당황하지 않게 해줘요.','알고는 있는데 막상 말이 안 나오죠. 가치 설명 멘트를 미리 적어두고 연습해 보세요.','가끔 쓰는 건데 타이밍이 어렵죠. 가격 질문이 나오기 전에 먼저 가치를 말하는 게 포인트예요.','기준은 있는데 흔들릴 때가 있어요. "이 가격이 맞아요"라고 스스로 확신하는 연습을 해보세요.','']},
+  {id:'sns',label:'SNS & 재구매 연결',color:'#8B5EA7',info:'오늘 만남을 다음으로 이어가는 방법',
+   items:['구매 고객에게 SNS 팔로우·QR코드 안내를 자연스럽게 건넨다','명함·스티커·쇼핑백에 연락처와 SNS 계정이 포함되어 있다','"다음 플리마켓 일정"을 알리는 한마디를 마무리에 넣는다'],
+   tips:['QR 하나만 만들어 부스에 붙여두세요. 그게 SNS 연결의 시작이에요.','알고는 있는데 아직 준비가 안 된 거예요. 명함 한 장부터 만들어 보세요.','가끔 하는 거면 됩니다. 이제 매 구매마다 루틴으로 만들어 보세요.','행동은 하는데 자연스럽지 않아요. "팔로우 해주시면 다음 일정 알려드려요" 한 줄 연습해 보세요.','']},
+  {id:'close',label:'마감 & 셀프 리뷰',color:'#C2607A',info:'오늘 하루를 내일의 자산으로 만들기',
+   items:['행사가 끝나면 많이 팔린 상품과 잘 안 팔린 상품을 정리한다','고객 반응이 좋았던 멘트나 상황을 기록해두는 편이다','다음 참여 전 오늘 체크리스트를 다시 꺼내 볼 의향이 있다'],
+   tips:['오늘 끝나고 딱 2분만 써보세요. 뭐가 잘 됐고 뭐가 안 됐는지 한 줄씩.','알고는 있는데 실행이 안 되는 거예요. 핸드폰 메모에 한 줄이면 충분해요.','가끔 하는 거면 됩니다. 다음 플리마켓 전날 리뷰 노트 꺼내보는 것을 캘린더에 넣어두세요.','기록은 하는데 활용이 아직 어색해요. 잘 됐던 멘트를 다음 부스에서 의도적으로 다시 써보세요.','']},
 ];
 
-const opts = [
-  { label: '아직\n못해요',  cls: 'a1', score: 1 },
-  { label: '약간\n부족',    cls: 'a2', score: 2 },
-  { label: '보통\n이에요',  cls: 'a3', score: 3 },
-  { label: '제법\n잘해요',  cls: 'a4', score: 4 },
-  { label: '매우\n잘해요',  cls: 'a5', score: 5 },
+const OPTS=[
+  {n:'1',lbl:'안\n해봤어요',   cls:'s1',score:1,tag:'미경험',tagBg:'#FEF0EB',tagCol:'#8C3D26'},
+  {n:'2',lbl:'알지만\n거의 안',cls:'s2',score:2,tag:'인지만', tagBg:'#FEF3DC',tagCol:'#8B6010'},
+  {n:'3',lbl:'가끔\n해요',     cls:'s3',score:3,tag:'간헐적',tagBg:'#F0F4F8',tagCol:'#3A5570'},
+  {n:'4',lbl:'자주\n어색해요', cls:'s4',score:4,tag:'성장중', tagBg:'#E6F5F4',tagCol:'#1A6B60'},
+  {n:'5',lbl:'항상\n자연스러워',cls:'s5',score:5,tag:'숙련',  tagBg:'#E4F5EC',tagCol:'#2A7A50'},
 ];
-const MAX_SCORE = 5;
-
-const msgs = [
-  '전 영역이 탄탄해요. 그래도 위 3개 영역엔 한 단계 더 다듬을 포인트가 있어요. 강점일수록 빈틈은 잘 보이지 않으니 의식적으로 챙겨봐요.',
-  '전반적으로 준비가 잘 되어 있네요. 위 3개 보완 영역만 의식적으로 연습해도 부스 분위기가 달라집니다.',
-  '강점과 보완점이 고루 있어요. 위 3개 영역의 "당장 바꿀 행동 1가지"부터 시작해 보세요. 작은 차이가 단골을 만듭니다.',
-  '솔직하게 체크해 주신 것 자체가 절반은 성장한 거예요. 위 보완점 3가지를 다음 마켓에서 직접 시도해 보시면, 분명한 변화를 느낄 수 있어요.',
+const PROFILES=[
+  {min:4.3,badge:'마스터 셀러',bg:'#E4F5EC',col:'#2A7A50',name:'거의 모든 행동이 몸에 배어 있어요',desc:'의식하지 않아도 자연스럽게 되는 단계예요. 오늘 교육에서는 왜 이게 효과 있는지를 언어화하고, 팀원에게 전파하는 것을 목표로 해보세요.'},
+  {min:3.4,badge:'숙련 셀러',bg:'#E6F5F4',col:'#1A6B60',name:'전반적으로 잘 하고 있어요',desc:'자주 하고 있지만 어색함이 남아 있는 영역이 있어요. 반복이 어색함을 없애줘요. 오늘 교육에서 확신을 얻어가세요.'},
+  {min:2.5,badge:'성장 중인 셀러',bg:'#E6F1FB',col:'#0C447C',name:'알고 있지만 실행이 아직 고르지 않아요',desc:'가끔 하는 것과 항상 하는 것 사이의 간극을 줄이는 게 목표예요. 루틴으로 만드는 방법을 오늘 교육에서 찾아가세요.'},
+  {min:1.7,badge:'입문 셀러',bg:'#FEF3DC',col:'#8B6010',name:'알고는 있지만 실행이 아직 어색해요',desc:'인지와 행동 사이의 간격이 있는 단계예요. 오늘 교육에서 이렇게 하면 되는구나라는 확신 하나를 가져가세요.'},
+  {min:0,badge:'시작 단계',bg:'#FEF0EB',col:'#8C3D26',name:'아직 낯선 것들이 많아요 — 딱 좋은 타이밍이에요',desc:'처음 접하는 것들이 많은 단계예요. 오늘 교육에서 딱 한 가지만 내일 바로 써보는 것을 목표로 해요.'},
 ];
-
-const catAdvice = {
-  setup: [
-    '진열은 "삼각형 구도" — 가운데를 가장 높게, 양옆은 낮게 배치하면 시선이 자연스럽게 머뭅니다.',
-    '가격표는 손글씨라도 또렷하게. 안 보이면 "얼마예요?" 묻기 전에 발길이 멈춥니다.',
-    '부스 정면에 SNS QR코드 + 부스명을 한눈에 — 스마트폰 든 고객이 자동으로 팔로우하게 만드세요.',
-  ],
-  welcome: [
-    '고객이 부스 앞 1m에 들어오면 3초 안에 눈 맞추기. 머무는 시간을 2배로 늘려줍니다.',
-    '"그냥 구경하세요"보다 "○○ 만든 ○○이에요" — 짧은 자기소개로 부담을 풀어주세요.',
-    '안 사고 가는 고객에게도 "다음에 또 봬요!" — 다음 마켓에 다시 옵니다.',
-  ],
-  story: [
-    '대표 상품 1개의 "30초 스토리"를 외워두세요. 재료 / 제작 시간 / 영감 — 3가지면 충분.',
-    '"이게 뭐예요?"엔 5초 안에 매력 한 문장이 나와야 합니다. 미리 적어 보세요.',
-    '"이거 들고 가시면 ○○할 때 딱이에요" — 고객의 사용 장면을 그려주세요.',
-  ],
-  price: [
-    '깎아달라 요청엔 가격 대신 가치부터 — "재료비만 ○○, 만드는 데 ○○시간 걸려요."',
-    '마진 마지노선과 할인 한도를 미리 정해두면 흔들리지 않습니다.',
-    '무리한 요청엔 정중하게 "이 가격이 최선이에요." 미안해하지 마세요.',
-  ],
-  sns: [
-    '부스에 QR코드 큰 사이즈로 — "팔로우하시면 다음 마켓 일정 알려드려요" 한 마디 추가.',
-    '명함·스티커·포장에 SNS 핸들 노출 — 집에 가서도 기억나게.',
-    '구매 고객 사진을 SNS에 올려도 되는지 양해 구해 — 콘텐츠로 활용하세요.',
-  ],
-  close: [
-    '마감 직후 5분 — 잘 팔린 / 안 팔린 / 인상 깊은 고객 3가지만 메모하세요.',
-    '"왜 이 상품이 팔렸을까?" 질문이 다음 마켓의 진열·가격·스토리를 결정합니다.',
-    '다음 마켓 일정 잡는 순간 오늘 메모 다시 꺼내기 — 같은 실수 반복을 막아줍니다.',
-  ],
-};
-
-const polishAdvice = {
-  setup:   '진열 기본기가 잘 잡혀 있어요. 시즌·테마별 디스플레이 변화를 시도해 보세요.',
-  welcome: '첫인상이 안정적이에요. 단골 얼굴을 기억하는 한마디로 차별화해 봐요.',
-  story:   '스토리텔링이 능숙해요. 영상·사진 콘텐츠로 만들어 SNS에서도 풀어보세요.',
-  price:   '가격 응대가 흔들리지 않아요. 세트·번들 구성으로 객단가를 올려 봐요.',
-  sns:     'SNS 연결 흐름이 잘 잡혀 있어요. 정기 콘텐츠 캘린더로 한 단계 더 가봐요.',
-  close:   '셀프 리뷰가 체계적이에요. 데이터를 누적해 분기별 흐름을 분석해 보세요.',
-};
-
-const TOTAL = cats.reduce((a, c) => a + c.items.length, 0);
-const answers = {};
-
-function updateProgress() {
-  const done = Object.keys(answers).length;
-  const pct  = Math.round(done / TOTAL * 100);
-  document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('prog-label').textContent = pct + '%';
-  document.getElementById('header-progress').textContent = done + ' / ' + TOTAL;
-  document.getElementById('counter-text').textContent = done + '개 응답됨 · ' + TOTAL + '개 중';
-  document.getElementById('submit-btn').disabled = done < TOTAL;
+const ans={},TOTAL=CATS.reduce((a,c)=>a+c.items.length,0);
+function upd(){
+  const d=Object.keys(ans).length,pct=Math.round(d/TOTAL*100);
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pp').textContent=pct+'%';
+  document.getElementById('hp').textContent=d+' / '+TOTAL;
+  document.getElementById('ct').textContent=d+'개 응답됨 · '+TOTAL+'개 중';
+  document.getElementById('sb').disabled=d<TOTAL;
 }
-
-function build() {
-  const wrap = document.getElementById('checklist-wrap');
-  wrap.innerHTML = '';
-  cats.forEach(cat => {
-    const sec = document.createElement('div');
-    sec.className = 'cat-section';
-    sec.innerHTML = `
-      <div class="cat-label">
-        <div class="cat-dot" style="background:${cat.color}"></div>
-        <div class="cat-name">${cat.label}</div>
-      </div>
-      <div class="cat-info">${cat.info}</div>`;
-    cat.items.forEach((item, idx) => {
-      const key  = cat.id + '_' + idx;
-      const card = document.createElement('div');
-      card.className = 'item-card';
-      card.id = 'card_' + key;
-      card.innerHTML = `<div class="item-text">${item}</div><div class="btn-row" id="row_${key}"></div>`;
+function build(){
+  const wrap=document.getElementById('cl');wrap.innerHTML='';
+  CATS.forEach(cat=>{
+    const sec=document.createElement('div');sec.className='cat-sec';
+    sec.innerHTML='<div class="cat-hd"><div class="cat-dot" style="background:'+cat.color+'"></div><div class="cat-nm">'+cat.label+'</div></div><div class="cat-info">'+cat.info+'</div>';
+    cat.items.forEach((q,i)=>{
+      const key=cat.id+'_'+i,card=document.createElement('div');
+      card.className='item-card';card.id='ic_'+key;
+      card.innerHTML='<div class="item-txt">'+q+'</div><div class="opts" id="op_'+key+'"></div>';
       sec.appendChild(card);
-      setTimeout(() => {
-        const row = document.getElementById('row_' + key);
-        opts.forEach(opt => {
-          const b = document.createElement('button');
-          b.className = 'btn-opt';
-          b.textContent = opt.label;
-          b.onclick = () => {
-            row.querySelectorAll('.btn-opt').forEach(x => x.className = 'btn-opt');
-            b.className = 'btn-opt ' + opt.cls;
-            answers[key] = opt.score;
-            document.getElementById('card_' + key).classList.add('answered');
-            updateProgress();
+      setTimeout(()=>{
+        const row=document.getElementById('op_'+key);
+        OPTS.forEach(o=>{
+          const b=document.createElement('button');b.className='opt';
+          b.innerHTML='<span class="opt-n">'+o.n+'</span><span class="opt-l">'+o.lbl+'</span>';
+          b.onclick=()=>{
+            row.querySelectorAll('.opt').forEach(x=>x.className='opt');
+            b.className='opt '+o.cls;ans[key]=o.score;
+            document.getElementById('ic_'+key).classList.add('done');upd();
           };
           row.appendChild(b);
         });
-      }, 0);
+      },0);
     });
     wrap.appendChild(sec);
   });
 }
-
-document.getElementById('submit-btn').addEventListener('click', () => {
-  const rw = document.getElementById('result-wrap');
-  rw.classList.add('show');
-  const sr = document.getElementById('score-rows');
-  sr.innerHTML = '';
-  const high = [];
-  const catResults = [];
-  let totalPct = 0;
-
-  cats.forEach(cat => {
-    const keys  = cat.items.map((_, i) => cat.id + '_' + i);
-    const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
-    const pct   = Math.round(total / (keys.length * MAX_SCORE) * 100);
-    catResults.push({ ...cat, pct });
-    totalPct += pct;
-    if (pct >= 80) high.push(cat.label);
-    const row = document.createElement('div');
-    row.className = 'score-row';
-    row.innerHTML = `
-      <div class="score-name">${cat.label}</div>
-      <div class="score-bar-wrap">
-        <div class="score-bar" style="width:0%;background:${cat.color}" data-pct="${pct}"></div>
-      </div>
-      <div class="score-pct">${pct}%</div>`;
+document.getElementById('sb').addEventListener('click',()=>{
+  const rw=document.getElementById('rw');rw.classList.add('show');
+  document.getElementById('sw').style.display='none';
+  const sr=document.getElementById('sr');sr.innerHTML='';
+  let tot=0;const cd=[];
+  CATS.forEach(cat=>{
+    const keys=cat.items.map((_,i)=>cat.id+'_'+i);
+    const sum=keys.reduce((a,k)=>a+(ans[k]||0),0);
+    const avg=sum/keys.length;tot+=avg;
+    const pct=Math.round((avg-1)/4*100);
+    const opt=OPTS[Math.min(Math.round(avg)-1,4)];
+    cd.push({...cat,avg,pct,opt});
+    const row=document.createElement('div');row.className='srow';
+    row.innerHTML='<div class="sname">'+cat.label+'</div><div class="strack"><div class="sbar" style="width:0%;background:'+cat.color+'" data-p="'+pct+'"></div></div><div class="stag" style="color:'+opt.tagCol+'">'+opt.tag+'</div>';
     sr.appendChild(row);
   });
-
-  setTimeout(() => {
-    sr.querySelectorAll('.score-bar').forEach(b => { b.style.width = b.dataset.pct + '%'; });
-  }, 80);
-
-  const gt = document.getElementById('good-tags');
-  gt.innerHTML = high.length
-    ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
-    : '<span class="tag tag-none">다음 마켓 후 재확인해 보세요</span>';
-
-  const avg = Math.round(totalPct / cats.length);
-  document.getElementById('result-msg').textContent = msgs[avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3];
-
-  // 내 보완점 — 점수와 무관하게 가장 낮은 3개 영역을 항상 노출
-  const adviceWrap = document.getElementById('advice-list');
-  adviceWrap.innerHTML = '';
-  const focusCats = [...catResults].sort((a, b) => a.pct - b.pct).slice(0, 3);
-
-  focusCats.forEach(c => {
-    const tier = c.pct < 50 ? { cls: 'tier-low',  label: '많이 아쉬워요' }
-               : c.pct < 65 ? { cls: 'tier-mid',  label: '꽤 아쉬워요' }
-               : c.pct < 80 ? { cls: 'tier-high', label: '조금 아쉬워요' }
-               : c.pct < 95 ? { cls: 'tier-top',  label: '여기를 다듬어요' }
-                            : { cls: 'tier-top',  label: '거의 완벽 · 더 정교하게' };
-    const tips = c.pct >= 80
-      ? [polishAdvice[c.id], ...(catAdvice[c.id] || []).slice(0, 2)].filter(Boolean)
-      : (catAdvice[c.id] || []);
-    const block = document.createElement('div');
-    block.className = 'advice-block ' + tier.cls;
-    block.innerHTML = `
-      <div class="advice-cat">
-        <span class="advice-cat-dot" style="background:${c.color}"></span>
-        <span class="advice-cat-name">${c.label}</span>
-        <span class="advice-tier-badge">${tier.label}</span>
-        <span class="advice-cat-pct">${c.pct}%</span>
-      </div>
-      <ul class="advice-tips">
-        ${tips.map(t => `<li>${t}</li>`).join('')}
-      </ul>`;
-    adviceWrap.appendChild(block);
-  });
-
-  // 다음 마켓에서 바로 시도해 볼 3가지
-  const nextList = document.getElementById('next-step-list');
-  const nextSteps = focusCats
-    .map(c => (catAdvice[c.id] && catAdvice[c.id][0]) || '')
-    .filter(Boolean);
-  nextList.innerHTML = nextSteps.map(s => `<li>${s}</li>`).join('');
-
-  document.getElementById('submit-wrap').style.display = 'none';
-  rw.scrollIntoView({ behavior: 'smooth' });
+  setTimeout(()=>sr.querySelectorAll('.sbar').forEach(b=>b.style.width=b.dataset.p+'%'),80);
+  const avg=tot/CATS.length;
+  const prof=PROFILES.find(p=>avg>=p.min)||PROFILES[PROFILES.length-1];
+  const pb=document.getElementById('pb');pb.textContent=prof.badge;pb.style.background=prof.bg;pb.style.color=prof.col;
+  document.getElementById('pn').textContent=prof.name;document.getElementById('pd').textContent=prof.desc;
+  const weak=cd.filter(c=>c.avg<4.5);
+  const al=document.getElementById('al'),ac=document.getElementById('ac');ac.innerHTML='';
+  if(!weak.length){ac.innerHTML='<div class="all-good">모든 영역이 자연스러운 수준이에요.<br>오늘 교육에서는 언어화와 팀 전파에 집중해 보세요.</div>';}
+  else{
+    al.style.display='block';
+    weak.forEach(c=>{
+      const ti=Math.min(Math.round(c.avg)-1,c.tips.length-1);
+      const tip=c.tips[ti];if(!tip)return;
+      const o=OPTS[ti];
+      const div=document.createElement('div');div.className='act-card';
+      div.innerHTML='<div class="act-top"><div class="act-dot" style="background:'+c.color+'"></div><div class="act-cat">'+c.label+'</div><div class="act-lv" style="background:'+o.tagBg+';color:'+o.tagCol+'">'+o.tag+'</div></div><div class="act-tip">'+tip+'</div>';
+      ac.appendChild(div);
+    });
+  }
+  rw.scrollIntoView({behavior:'smooth'});
 });
-
-document.getElementById('reset-btn').addEventListener('click', () => {
-  Object.keys(answers).forEach(k => delete answers[k]);
-  document.getElementById('result-wrap').classList.remove('show');
-  document.getElementById('submit-wrap').style.display = 'block';
-  build();
-  updateProgress();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+document.getElementById('rb').addEventListener('click',()=>{
+  Object.keys(ans).forEach(k=>delete ans[k]);
+  document.getElementById('rw').classList.remove('show');
+  document.getElementById('sw').style.display='block';
+  build();upd();window.scrollTo({top:0,behavior:'smooth'});
 });
+build();upd();
 
-build();
-updateProgress();
 </script>
 </body>
 </html>
