@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도자기 매장 서비스 셀프 체크 | 강사 곽자향</title>
+<meta name="description" content="도자기 매장 서비스 교육 전 셀프 체크리스트. 나의 서비스 역량을 솔직하게 점검해보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2A9D8F;
+    --teal-light: #E6F5F4;
+    --teal-mid: #B2DFDB;
+    --teal-dark: #1A6B60;
+    --gold: #E8A020;
+    --gold-light: #FEF3DC;
+    --gold-dark: #8B6010;
+    --blue: #4A9CC7;
+    --blue-light: #E8F4FB;
+    --blue-dark: #2B6A90;
+    --purple: #7B5EA7;
+    --purple-light: #F0EBF8;
+    --purple-dark: #4E3575;
+    --orange: #E76F51;
+    --orange-light: #FEF0EB;
+    --orange-dark: #9A3E26;
+    --green: #4BB87A;
+    --green-light: #E4F5EC;
+    --green-dark: #2A7A50;
+    --navy: #1E2D40;
+    --white: #FFFFFF;
+    --bg: #F7F9FC;
+    --card-bg: #FFFFFF;
+    --text: #1E2D40;
+    --text-muted: #6B7B8D;
+    --text-light: #9AABB8;
+    --border: #E2EAF0;
+    --border-mid: #C8D8E4;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --shadow: 0 2px 16px rgba(30,45,64,.07);
+    --shadow-card: 0 4px 24px rgba(30,45,64,.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── TOP HEADER ── */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: var(--teal);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-mark svg { width: 18px; height: 18px; }
+  .logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .logo-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .progress-pill {
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 5rem;
+  }
+
+  /* ── HERO CARD ── */
+  .hero-card {
+    background: linear-gradient(135deg, var(--navy) 0%, #2B4A6A 100%);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: rgba(42,157,143,.2);
+    border-radius: 50%;
+  }
+  .hero-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 20px;
+    width: 100px; height: 100px;
+    background: rgba(232,160,32,.15);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(42,157,143,.3);
+    color: #7EEAE0;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: .75rem;
+    border: 1px solid rgba(42,157,143,.4);
+  }
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.4;
+    margin-bottom: .6rem;
+    position: relative;
+  }
+  .hero-desc {
+    font-size: 13.5px;
+    color: rgba(255,255,255,.72);
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-progress {
+    margin-top: 1.5rem;
+    position: relative;
+  }
+  .hero-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 8px;
+  }
+  .hero-progress-label strong {
+    color: #7EEAE0;
+    font-weight: 500;
+  }
+  .progress-track {
+    height: 6px;
+    background: rgba(255,255,255,.15);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), #5ECFC3);
+    border-radius: 3px;
+    transition: width .4s ease;
+    width: 0%;
+  }
+
+  /* ── CATEGORY SECTION ── */
+  .cat-section {
+    margin-bottom: 1.75rem;
+  }
+  .cat-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  .cat-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .cat-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .cat-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+    padding-left: 20px;
+    margin-bottom: .85rem;
+  }
+
+  /* ── ITEM CARD ── */
+  .item-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.1rem;
+    margin-bottom: .6rem;
+    box-shadow: var(--shadow);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .item-card.answered {
+    border-color: var(--border-mid);
+    box-shadow: var(--shadow-card);
+  }
+  .item-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: .75rem;
+  }
+  .btn-row {
+    display: flex;
+    gap: 7px;
+  }
+  .btn-opt {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: center;
+    transition: all .18s;
+    min-height: 42px;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+  .btn-opt:hover {
+    border-color: var(--border-mid);
+    background: var(--white);
+  }
+  .btn-opt.active-1 {
+    background: var(--gold-light);
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-2 {
+    background: var(--teal-light);
+    border-color: var(--teal);
+    color: var(--teal-dark);
+    font-weight: 500;
+  }
+  .btn-opt.active-3 {
+    background: var(--green-light);
+    border-color: var(--green);
+    color: var(--green-dark);
+    font-weight: 500;
+  }
+
+  /* ── RESULT ── */
+  .result-wrap {
+    display: none;
+    animation: fadeUp .4s ease;
+  }
+  .result-wrap.show { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1rem;
+  }
+  .result-heading {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+  }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: .8rem;
+  }
+  .score-name {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    width: 100px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+  .score-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .score-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width .6s cubic-bezier(.22,1,.36,1);
+  }
+  .score-pct {
+    font-size: 13px;
+    font-weight: 500;
+    width: 34px;
+    text-align: right;
+    color: var(--text-muted);
+  }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1.25rem 0;
+  }
+  .focus-section-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: .6rem;
+    font-weight: 500;
+  }
+  .tag-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 1rem;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .tag-focus {
+    background: var(--gold-light);
+    color: var(--gold-dark);
+    border: 1px solid var(--gold);
+  }
+  .tag-good {
+    background: var(--green-light);
+    color: var(--green-dark);
+    border: 1px solid var(--green);
+  }
+  .result-msg {
+    background: linear-gradient(135deg, var(--teal-light), #EEF8F7);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1.1rem;
+    font-size: 13.5px;
+    color: var(--teal-dark);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ── SUBMIT BUTTON ── */
+  .submit-wrap {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, var(--bg) 70%, transparent);
+    padding: 1.25rem 1.25rem 1.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  /* center the fixed button */
+  @media (min-width: 680px) {
+    .submit-wrap {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 680px;
+    }
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+    box-shadow: 0 4px 16px rgba(42,157,143,.35);
+  }
+  .submit-btn:hover { background: var(--teal-dark); }
+  .submit-btn:active { transform: scale(.98); }
+  .submit-btn:disabled {
+    background: var(--border-mid);
+    color: var(--text-light);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  .counter-text {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: .5rem;
+  }
+
+  .reset-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    margin-top: .75rem;
+  }
+  .reset-btn:hover { background: var(--bg); }
+
+  .footer {
+    text-align: center;
+    padding: 2.5rem 0 1rem;
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 21px; }
+    .btn-opt { font-size: 11px; min-height: 40px; }
+    .item-text { font-size: 13.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 18 18" fill="none">
+          <ellipse cx="9" cy="11" rx="6" ry="4" stroke="white" stroke-width="1.5"/>
+          <path d="M3 11 Q5 6 9 5 Q13 6 15 11" stroke="white" stroke-width="1.5" fill="none"/>
+          <line x1="9" y1="5" x2="9" y2="2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">도자기 매장 서비스 체크</div>
+        <div class="logo-sub">강사 곽자향</div>
+      </div>
+    </div>
+    <div class="progress-pill" id="header-progress">0 / 18</div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="hero-card">
+    <div class="hero-badge">교육 전 셀프 점검</div>
+    <div class="hero-title">지금 내 서비스,<br>솔직하게 돌아볼게요</div>
+    <div class="hero-desc">정답은 없어요. 지금 내 모습을 있는 그대로 체크해 주세요.<br>오늘 교육에서 무엇을 가져갈지 스스로 찾게 됩니다.</div>
+    <div class="hero-progress">
+      <div class="hero-progress-label">
+        <span>진행률</span>
+        <strong id="prog-label">0%</strong>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="checklist-wrap"></div>
+
+  <div class="result-wrap" id="result-wrap">
+    <div class="result-card">
+      <div class="result-heading">나의 서비스 역량 현황</div>
+      <div id="score-rows"></div>
+      <div class="divider"></div>
+      <div class="focus-section-label">집중할 영역</div>
+      <div class="tag-wrap" id="focus-tags"></div>
+      <div class="focus-section-label">강점 영역</div>
+      <div class="tag-wrap" id="good-tags"></div>
+      <div class="result-msg" id="result-msg"></div>
+    </div>
+    <button class="reset-btn" id="reset-btn">다시 체크하기</button>
+  </div>
+
+  <div class="footer">
+    곽자향 · TenX Coaching &amp; Consulting<br>
+    여주도자기 매장 서비스 교육
+  </div>
+
+</main>
+
+<div class="submit-wrap" id="submit-wrap">
+  <button class="submit-btn" id="submit-btn" disabled>결과 보기</button>
+  <div class="counter-text" id="counter-text">0개 응답됨 · 18개 중</div>
+</div>
+
+<script>
+const cats = [
+  {
+    id: 'welcome', label: '입장 & 환대', color: '#2A9D8F',
+    info: '고객이 매장에 들어오는 순간부터',
+    items: [
+      '고객이 매장에 들어오면 하던 일을 멈추고 눈을 맞추며 먼저 인사한다',
+      '둘러보는 고객에게 부담주지 않고 적절한 거리를 유지한다',
+      '고객이 나갈 때 구매 여부와 관계없이 밝게 배웅한다',
+    ]
+  },
+  {
+    id: 'product', label: '제품 설명 & 스토리', color: '#E8A020',
+    info: '도자기의 가치를 말로 전달하는 능력',
+    items: [
+      '매장 도자기의 산지·작가·제작 방식을 자신 있게 설명할 수 있다',
+      '"이거 어떤 거예요?" 질문에 30초 안에 매력을 전달할 수 있다',
+      '제품을 설명할 때 고객의 일상 장면(밥상, 선물 등)에 연결해서 말한다',
+    ]
+  },
+  {
+    id: 'price', label: '가격 & 가치 응대', color: '#4A9CC7',
+    info: '"왜 이렇게 비싸요?"에 자신 있게 답하기',
+    items: [
+      '가격 질문이 나오면 당황하지 않고 제작 과정·특별함으로 설명한다',
+      '예산이 부족한 고객에게 저렴한 소품이나 대안 제품을 자연스럽게 안내한다',
+      '할인 요청을 받았을 때 매장 기준 안에서 정중하게 응대할 수 있다',
+    ]
+  },
+  {
+    id: 'phone', label: '전화 응대', color: '#7B5EA7',
+    info: '전화로도 매장 분위기가 전달된다',
+    items: [
+      '전화를 받을 때 매장명과 이름을 먼저 밝힌다',
+      '영업시간·위치·주차 안내를 막힘없이 설명할 수 있다',
+      '모르는 내용은 솔직하게 "확인 후 연락드린다"고 안내한다',
+    ]
+  },
+  {
+    id: 'group', label: '단체 & 기업 주문', color: '#E76F51',
+    info: '한 번에 큰 주문이 들어올 때',
+    items: [
+      '단체주문 문의 시 수량·납기일·포장방식·예산을 한 번에 확인한다',
+      '기업 답례품·행사용 주문에 맞는 제품을 추천할 수 있다',
+      '단체주문 후 납품 전까지 고객과 중간 연락을 한 번 이상 한다',
+    ]
+  },
+  {
+    id: 'repeat', label: '단골 만들기', color: '#4BB87A',
+    info: '한 번 온 고객이 다시 오게 하는 힘',
+    items: [
+      '구매한 고객에게 관리법이나 사용 팁을 자연스럽게 안내한다',
+      '재방문을 유도하는 한마디(신상 입고 예정, SNS 팔로우 등)를 건넨다',
+      '이전에 방문한 고객의 얼굴이나 취향을 기억하려고 노력한다',
+    ]
+  },
+];
+
+const opts = [
+  { label: '아직\n못해요', cls: 'active-1', score: 1 },
+  { label: '보통\n이에요', cls: 'active-2', score: 2 },
+  { label: '잘\n해요',    cls: 'active-3', score: 3 },
+];
+
+const msgs = [
+  '전 영역이 탄탄하게 준비되어 있어요! 오늘 교육으로 더 정교하게 다듬어 봐요.',
+  '전반적으로 준비가 잘 되어 있네요. 집중 영역에서 한 단계 더 올라가 봐요.',
+  '잘 하는 부분과 보완할 부분이 고루 있어요. 오늘 교육이 딱 맞는 시점이에요.',
+  '솔직하게 체크해 주셨군요. 오늘 교육에서 실질적인 변화를 만들 수 있어요.',
+];
+
+const TOTAL = cats.reduce((a, c) => a + c.items.length, 0);
+const answers = {};
+
+function countAnswered() { return Object.keys(answers).length; }
+
+function updateProgress() {
+  const done = countAnswered();
+  const pct  = Math.round(done / TOTAL * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = pct + '%';
+  document.getElementById('header-progress').textContent = done + ' / ' + TOTAL;
+  document.getElementById('counter-text').textContent = done + '개 응답됨 · ' + TOTAL + '개 중';
+  document.getElementById('submit-btn').disabled = done < TOTAL;
+}
+
+function build() {
+  const wrap = document.getElementById('checklist-wrap');
+  wrap.innerHTML = '';
+  cats.forEach(cat => {
+    const sec = document.createElement('div');
+    sec.className = 'cat-section';
+    sec.innerHTML = `
+      <div class="cat-label">
+        <div class="cat-dot" style="background:${cat.color}"></div>
+        <div class="cat-name">${cat.label}</div>
+      </div>
+      <div class="cat-info">${cat.info}</div>
+    `;
+    cat.items.forEach((item, idx) => {
+      const key = cat.id + '_' + idx;
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      card.id = 'card_' + key;
+      card.innerHTML = `<div class="item-text">${item}</div><div class="btn-row" id="row_${key}"></div>`;
+      sec.appendChild(card);
+      setTimeout(() => {
+        const row = document.getElementById('row_' + key);
+        opts.forEach(opt => {
+          const b = document.createElement('button');
+          b.className = 'btn-opt';
+          b.textContent = opt.label;
+          b.style.whiteSpace = 'pre-line';
+          b.onclick = () => {
+            row.querySelectorAll('.btn-opt').forEach(x => x.className = 'btn-opt');
+            b.className = 'btn-opt ' + opt.cls;
+            answers[key] = opt.score;
+            document.getElementById('card_' + key).classList.add('answered');
+            updateProgress();
+          };
+          row.appendChild(b);
+        });
+      }, 0);
+    });
+    wrap.appendChild(sec);
+  });
+}
+
+document.getElementById('submit-btn').addEventListener('click', () => {
+  const rw = document.getElementById('result-wrap');
+  rw.classList.add('show');
+
+  const sr = document.getElementById('score-rows');
+  sr.innerHTML = '';
+  const low = [], high = [];
+  let totalPct = 0;
+
+  cats.forEach(cat => {
+    const keys  = cat.items.map((_, i) => cat.id + '_' + i);
+    const total = keys.reduce((a, k) => a + (answers[k] || 0), 0);
+    const pct   = Math.round(total / (keys.length * 3) * 100);
+    totalPct += pct;
+    if (pct < 60) low.push(cat.label);
+    if (pct >= 80) high.push(cat.label);
+    const row = document.createElement('div');
+    row.className = 'score-row';
+    row.innerHTML = `
+      <div class="score-name">${cat.label}</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar" style="width:0%;background:${cat.color}" data-pct="${pct}"></div>
+      </div>
+      <div class="score-pct">${pct}%</div>
+    `;
+    sr.appendChild(row);
+  });
+
+  setTimeout(() => {
+    sr.querySelectorAll('.score-bar').forEach(b => {
+      b.style.width = b.dataset.pct + '%';
+    });
+  }, 80);
+
+  const ft = document.getElementById('focus-tags');
+  const gt = document.getElementById('good-tags');
+  ft.innerHTML = low.length
+    ? low.map(l => `<span class="tag tag-focus">${l}</span>`).join('')
+    : '<span class="tag tag-good">집중 영역 없음 — 전반적으로 준비됨!</span>';
+  gt.innerHTML = high.length
+    ? high.map(l => `<span class="tag tag-good">${l}</span>`).join('')
+    : '<span class="tag" style="background:var(--bg);color:var(--text-muted);border:1px solid var(--border)">교육 후 재확인해 보세요</span>';
+
+  const avg = Math.round(totalPct / cats.length);
+  const mi  = avg >= 80 ? 0 : avg >= 65 ? 1 : avg >= 50 ? 2 : 3;
+  document.getElementById('result-msg').textContent = msgs[mi];
+
+  document.getElementById('submit-wrap').style.display = 'none';
+  rw.scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.getElementById('result-wrap').classList.remove('show');
+  document.getElementById('submit-wrap').style.display = 'block';
+  build();
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+build();
+updateProgress();
+</script>
+</body>
+</html>
